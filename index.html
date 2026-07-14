@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content">
 <title>Chai Interval — Menu | Amity Gate 2, Sector 126, Noida</title>
-<meta name="description" content="Chai Interval — 100% Pure Veg. Kulhad chai ₹29 se shuru. Scan, order, interval enjoy karo.">
+<meta name="description" content="Chai Interval — 100% Pure Veg. Kulhad chai ₹29 se shuru. Scan, order on WhatsApp, interval enjoy karo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@500;700;800&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
@@ -21,18 +21,20 @@
   --veg:#1E8F3E;
   --hit:#E23B30;
   --wa:#1FAF53;
+  --insta:#C13584;
+  --gold:#E8C87A;
   --txt:#F5EFE2;
   --txt-dim:#B4AA95;
   --line:#2E2A20;
   --disp:'Bebas Neue','Arial Narrow',sans-serif;
   --body:'Manrope',system-ui,sans-serif;
   --mono:'Courier Prime','Courier New',monospace;
-  --stickyH:104px;
-  --safe:env(safe-area-inset-bottom,0px);
+  --safeB:env(safe-area-inset-bottom,0px);
+  --safeT:env(safe-area-inset-top,0px);
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
-body{background:var(--screen);color:var(--txt);font-family:var(--body);font-size:15px;line-height:1.45;padding-bottom:calc(120px + var(--safe))}
+body{background:var(--screen);color:var(--txt);font-family:var(--body);font-size:15px;line-height:1.45;padding-bottom:calc(130px + var(--safeB))}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;touch-action:manipulation}
 a{touch-action:manipulation}
 input,textarea{font-family:inherit}
@@ -40,7 +42,7 @@ input,textarea{font-family:inherit}
 .hide{display:none!important}
 
 /* ---------- MARQUEE HEADER ---------- */
-.marquee{background:#000;border-bottom:3px solid var(--marquee);padding:16px 16px 14px;text-align:center}
+.marquee{background:#000;border-bottom:3px solid var(--marquee);padding:calc(16px + var(--safeT)) 16px 14px;text-align:center}
 .bulbs{display:flex;justify-content:center;gap:9px;margin-bottom:9px}
 .bulb{width:7px;height:7px;border-radius:50%;background:var(--marquee);box-shadow:0 0 6px 1px rgba(255,196,46,.75)}
 .bulb:nth-child(even){animation:blink 1.7s infinite}
@@ -55,9 +57,9 @@ h1{font-family:var(--disp);font-size:44px;letter-spacing:4px;color:var(--marquee
 .hbadge.loc{background:var(--screen-2);color:var(--txt-dim);border:1px solid var(--line)}
 .nowshow{background:var(--marquee);color:#000;font-family:var(--disp);font-size:15px;letter-spacing:2.5px;text-align:center;padding:7px 8px}
 
-/* ---------- STICKY NAV: TABS + CHIPS ---------- */
+/* ---------- STICKY NAV ---------- */
 .navwrap{position:sticky;top:0;z-index:40;background:rgba(19,16,9,.97);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-.tabs{display:flex;padding:10px 16px 0;gap:10px}
+.tabs{display:flex;padding:calc(8px + var(--safeT)) 16px 0;gap:10px}
 .tab{flex:1;font-family:var(--disp);font-size:19px;letter-spacing:1.8px;padding:11px 4px 9px;text-align:center;color:var(--txt-dim);border-bottom:3px solid transparent;min-height:46px}
 .tab.active{color:var(--marquee);border-bottom-color:var(--marquee)}
 .chips{display:flex;gap:8px;overflow-x:auto;padding:10px 16px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
@@ -68,7 +70,7 @@ h1{font-family:var(--disp);font-size:44px;letter-spacing:4px;color:var(--marquee
 /* ---------- SEARCH ---------- */
 .searchwrap{padding:14px 16px 2px}
 .searchbox{position:relative}
-.searchbox input{width:100%;background:var(--screen-2);border:1.5px solid var(--line);border-radius:12px;color:var(--txt);padding:13px 40px 13px 40px;font-size:15px;min-height:48px}
+.searchbox input{width:100%;background:var(--screen-2);border:1.5px solid var(--line);border-radius:12px;color:var(--txt);padding:13px 40px 13px 40px;font-size:16px;min-height:48px}
 .searchbox input::placeholder{color:var(--txt-dim)}
 .searchbox .sicon{position:absolute;left:13px;top:50%;transform:translateY(-50%);opacity:.55;pointer-events:none}
 .sclear{position:absolute;right:6px;top:50%;transform:translateY(-50%);color:var(--txt-dim);font-size:17px;padding:8px 10px}
@@ -77,7 +79,7 @@ h1{font-family:var(--disp);font-size:44px;letter-spacing:4px;color:var(--marquee
 /* ---------- SECTIONS ---------- */
 .tabpage{display:none}
 .tabpage.on{display:block}
-.section{padding:24px 16px 4px;scroll-margin-top:var(--stickyH)}
+.section{padding:24px 16px 4px;scroll-margin-top:118px}
 .sec-head{border-bottom:2px solid var(--marquee);padding-bottom:8px}
 .sec-title{font-family:var(--disp);font-size:27px;letter-spacing:2px;color:var(--marquee);line-height:1}
 .sec-note{display:block;font-size:11px;color:var(--txt-dim);font-weight:700;margin-top:4px;letter-spacing:.3px}
@@ -99,13 +101,15 @@ h1{font-family:var(--disp);font-size:44px;letter-spacing:4px;color:var(--marquee
 .b-pick{background:var(--marquee);color:#000}
 .b-vip{background:#7A4FBF;color:#fff}
 .b-spl{background:var(--clay);color:#fff}
-.it-desc{font-size:12px;color:var(--txt-dim);margin-top:3px}
+.b-save{background:var(--veg);color:#fff}
+.b-gang{background:var(--hit);color:#fff}
+.it-desc{font-size:12px;color:var(--txt-dim);margin-top:3px;line-height:1.35}
 .it-price{font-family:var(--disp);font-size:19px;letter-spacing:1px;color:var(--marquee);margin-top:5px}
 .it-price small{font-size:12px;color:var(--txt-dim);letter-spacing:.5px;font-family:var(--body);font-weight:700}
+.it-price s{color:var(--txt-dim);font-size:14px;margin-right:6px;opacity:.8}
 .it-ctl{flex:0 0 auto;min-width:96px;display:flex;justify-content:flex-end}
 .addbtn{background:var(--marquee);color:#000;font-family:var(--disp);font-size:17px;letter-spacing:2px;padding:11px 22px;border-radius:10px;min-height:44px;transition:transform .1s}
 .addbtn:active{transform:scale(.94)}
-.addbtn.flash{background:var(--veg);color:#fff}
 .qtyctl{display:flex;align-items:center;border:1.5px solid var(--marquee);border-radius:10px;overflow:hidden;background:var(--screen-2)}
 .qtyctl button{color:var(--marquee);font-size:20px;font-weight:800;width:38px;height:44px;line-height:1}
 .qtyctl .q{font-family:var(--disp);font-size:18px;color:var(--marquee);min-width:24px;text-align:center}
@@ -115,22 +119,24 @@ h1{font-family:var(--disp);font-size:44px;letter-spacing:4px;color:var(--marquee
 footer{padding:34px 16px 26px;text-align:center;border-top:1px solid var(--line);margin-top:28px}
 .f-title{font-family:var(--disp);font-size:21px;letter-spacing:2px;color:var(--marquee)}
 .f-sub{font-size:12px;color:var(--txt-dim);margin:6px 0 14px}
-.f-call{display:inline-block;border:1.5px solid var(--marquee);color:var(--marquee);font-family:var(--disp);font-size:16px;letter-spacing:1.5px;padding:10px 20px;border-radius:10px;text-decoration:none}
+.f-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.f-btn{display:inline-block;border:1.5px solid var(--marquee);color:var(--marquee);font-family:var(--disp);font-size:15px;letter-spacing:1.5px;padding:10px 16px;border-radius:10px;text-decoration:none}
+.f-btn.insta{border-color:var(--insta);color:#E96BB0}
 .f-review{font-size:11.5px;color:var(--txt-dim);margin-top:16px;line-height:1.6}
 .f-review b{color:var(--marquee)}
 
 /* ---------- JUMP MENU FAB ---------- */
-.fab{position:fixed;right:14px;bottom:calc(20px + var(--safe));z-index:45;background:#000;color:var(--marquee);border:1.5px solid var(--marquee);font-family:var(--disp);font-size:16px;letter-spacing:2px;padding:12px 18px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.6);transition:bottom .2s}
-.fab.raised{bottom:calc(96px + var(--safe))}
-.jumper{position:fixed;left:14px;right:14px;bottom:calc(20px + var(--safe));z-index:65;background:var(--screen-2);border:1.5px solid var(--marquee);border-radius:16px;padding:14px;max-height:62vh;overflow-y:auto;transform:translateY(120%) ;transition:transform .28s ease;box-shadow:0 10px 34px rgba(0,0,0,.7)}
+.fab{position:fixed;right:14px;bottom:calc(20px + var(--safeB));z-index:45;background:#000;color:var(--marquee);border:1.5px solid var(--marquee);font-family:var(--disp);font-size:16px;letter-spacing:2px;padding:12px 18px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.6);transition:bottom .2s}
+.fab.raised{bottom:calc(102px + var(--safeB))}
+.jumper{position:fixed;left:14px;right:14px;bottom:calc(20px + var(--safeB));z-index:65;background:var(--screen-2);border:1.5px solid var(--marquee);border-radius:16px;padding:14px;max-height:60vh;max-height:60dvh;overflow-y:auto;transform:translateY(130%);transition:transform .28s ease;box-shadow:0 10px 34px rgba(0,0,0,.7)}
 .jumper.on{transform:translateY(0)}
 .jumper h4{font-family:var(--disp);font-size:17px;letter-spacing:2px;color:var(--txt-dim);margin:2px 4px 10px}
 .jump-item{display:flex;justify-content:space-between;align-items:center;width:100%;padding:13px 10px;border-bottom:1px solid var(--line);font-size:14px;font-weight:700;color:var(--txt);text-align:left;min-height:46px}
 .jump-item:last-child{border-bottom:none}
 .jump-item small{color:var(--txt-dim);font-weight:700;font-size:11px}
 
-/* ---------- UPSELL TOAST ---------- */
-.trailer{position:fixed;left:12px;right:12px;bottom:calc(96px + var(--safe));z-index:60;background:var(--screen-2);border:1.5px solid var(--marquee);border-radius:14px;padding:14px;display:flex;align-items:center;gap:11px;transform:translateY(180%);transition:transform .3s ease;box-shadow:0 8px 30px rgba(0,0,0,.65)}
+/* ---------- UPSELL TOAST — TOP (iPhone-safe) ---------- */
+.trailer{position:fixed;left:12px;right:12px;top:calc(118px + var(--safeT));z-index:60;background:var(--screen-2);border:1.5px solid var(--marquee);border-radius:14px;padding:14px;display:flex;align-items:center;gap:11px;transform:translateY(-260%);transition:transform .32s ease;box-shadow:0 8px 30px rgba(0,0,0,.65)}
 .trailer.show{transform:translateY(0)}
 .tr-tag{position:absolute;top:-10px;left:14px;background:var(--hit);color:#fff;font-family:var(--disp);font-size:12px;letter-spacing:2px;padding:2px 10px;border-radius:4px}
 .tr-txt{flex:1;font-size:13px;font-weight:600;line-height:1.4}
@@ -140,16 +146,16 @@ footer{padding:34px 16px 26px;text-align:center;border-top:1px solid var(--line)
 .tr-close{color:var(--txt-dim);font-size:20px;padding:10px;flex-shrink:0;margin:-6px}
 
 /* ---------- CART BAR ---------- */
-.cartbar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--marquee);color:#000;padding:13px 16px calc(13px + var(--safe));display:none;align-items:center;justify-content:space-between;gap:10px;border-top:3px dashed #000;box-shadow:0 -6px 24px rgba(0,0,0,.55)}
+.cartbar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--marquee);color:#000;padding:13px 16px calc(13px + max(var(--safeB), 10px));display:none;align-items:center;justify-content:space-between;gap:10px;border-top:3px dashed #000;box-shadow:0 -6px 24px rgba(0,0,0,.55)}
 .cartbar.on{display:flex}
 .cb-left{font-weight:800;font-size:14px;line-height:1.3}
 .cb-left small{display:block;font-weight:700;font-size:11px;opacity:.72}
 .cb-btn{font-family:var(--disp);font-size:19px;letter-spacing:1.5px;background:#000;color:var(--marquee);padding:12px 20px;border-radius:11px;min-height:48px}
 
-/* ---------- OVERLAY + ORDER SHEET (TICKET) ---------- */
+/* ---------- OVERLAY + ORDER SHEET ---------- */
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.66);z-index:70;opacity:0;pointer-events:none;transition:opacity .25s}
 .overlay.on{opacity:1;pointer-events:auto}
-.sheet{position:fixed;left:0;right:0;bottom:0;z-index:80;max-height:90vh;overflow-y:auto;-webkit-overflow-scrolling:touch;background:var(--ticket);color:var(--ticket-ink);border-radius:20px 20px 0 0;transform:translateY(105%);transition:transform .3s ease;font-family:var(--mono);padding-bottom:calc(10px + var(--safe))}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:80;max-height:88vh;max-height:88dvh;overflow-y:auto;-webkit-overflow-scrolling:touch;background:var(--ticket);color:var(--ticket-ink);border-radius:20px 20px 0 0;transform:translateY(105%);transition:transform .3s ease;font-family:var(--mono);padding-bottom:calc(14px + var(--safeB))}
 .sheet.on{transform:translateY(0)}
 .sheet-grip{width:44px;height:4px;border-radius:4px;background:#c9bda2;margin:12px auto 4px}
 .tk-close{position:absolute;top:10px;right:10px;font-size:15px;padding:10px 14px;color:#7a7059;font-weight:700}
@@ -184,17 +190,33 @@ footer{padding:34px 16px 26px;text-align:center;border-top:1px solid var(--line)
 .otype{display:flex;gap:9px;margin-bottom:10px}
 .otype button{flex:1;border:1.5px solid var(--ticket-ink);border-radius:10px;padding:12px 6px;font-family:var(--mono);font-weight:700;font-size:13px;background:#fff;min-height:48px}
 .otype button.sel{background:var(--ticket-ink);color:var(--ticket)}
-.tk-form input,.tk-form textarea{width:100%;border:1.5px solid #c9bda2;border-radius:10px;background:#fff;padding:13px;font-size:15px;margin-bottom:10px;font-family:var(--mono);color:var(--ticket-ink);min-height:48px}
+.tk-form input,.tk-form textarea{width:100%;border:1.5px solid #c9bda2;border-radius:10px;background:#fff;padding:13px;font-size:16px;margin-bottom:10px;font-family:var(--mono);color:var(--ticket-ink);min-height:48px}
 .tk-form textarea{resize:none;height:62px}
 .formerr{display:none;background:#fdecea;border:1.5px solid var(--hit);color:#a12920;font-size:12.5px;font-weight:700;border-radius:10px;padding:10px 12px;margin-bottom:10px}
 .formerr.on{display:block}
 .waorder{width:100%;background:var(--wa);color:#fff;font-family:var(--disp);font-size:21px;letter-spacing:2px;padding:16px;border-radius:14px;display:flex;align-items:center;justify-content:center;gap:10px;margin:2px 0 10px;text-decoration:none;min-height:56px}
-.tk-foot{text-align:center;font-size:10.5px;color:#8b8168;letter-spacing:.8px;padding:0 16px 14px;line-height:1.6}
+.tk-foot{text-align:center;font-size:10.5px;color:#8b8168;letter-spacing:.8px;padding:0 16px 6px;line-height:1.6}
 .empty{text-align:center;padding:34px 20px;font-size:13px;color:#7a7059}
 .empty .big{font-family:var(--disp);font-size:24px;letter-spacing:2px;color:var(--ticket-ink);margin-bottom:6px}
 
+/* ---------- THANK YOU / POST-ORDER ---------- */
+.thanks{text-align:center;padding:8px 4px 6px}
+.thanks .t-big{font-family:var(--disp);font-size:34px;letter-spacing:2.5px;color:var(--ticket-ink);line-height:1}
+.thanks .t-stars{font-size:18px;letter-spacing:6px;color:var(--clay);margin:8px 0 2px}
+.thanks .t-sub{font-size:12.5px;color:#6b6049;font-weight:700;margin-top:6px;line-height:1.5}
+.t-divider{display:flex;align-items:center;gap:10px;margin:18px 0 12px;color:#8b8168;font-size:11px;font-weight:700;letter-spacing:1.5px}
+.t-divider::before,.t-divider::after{content:"";flex:1;border-top:1.5px dashed #c9bda2}
+.t-card{background:#fff;border:1.5px solid #d8cdb2;border-radius:14px;padding:14px;margin-bottom:11px;text-align:center}
+.t-card .tc-h{font-weight:800;font-size:14px;line-height:1.4}
+.t-card .tc-s{font-size:11.5px;color:#7a7059;font-weight:700;margin:4px 0 10px;line-height:1.5}
+.t-go{display:inline-block;text-decoration:none;font-family:var(--disp);font-size:17px;letter-spacing:1.8px;padding:12px 22px;border-radius:10px;min-height:44px}
+.t-go.rev{background:#1a73e8;color:#fff}
+.t-go.ig{background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF);color:#fff}
+.t-again{width:100%;background:var(--ticket-ink);color:var(--ticket);font-family:var(--disp);font-size:18px;letter-spacing:2px;padding:14px;border-radius:12px;margin-top:6px;min-height:50px}
+.t-resend{display:block;text-align:center;font-size:11.5px;color:#7a7059;font-weight:700;margin-top:10px;text-decoration:underline}
+
 /* ---------- VARIANT SHEET ---------- */
-.vsheet{position:fixed;left:0;right:0;bottom:0;z-index:85;background:var(--screen-2);border-top:2.5px solid var(--marquee);border-radius:18px 18px 0 0;padding:20px 16px calc(20px + var(--safe));transform:translateY(110%);transition:transform .28s}
+.vsheet{position:fixed;left:0;right:0;bottom:0;z-index:85;background:var(--screen-2);border-top:2.5px solid var(--marquee);border-radius:18px 18px 0 0;padding:20px 16px calc(20px + var(--safeB));transform:translateY(110%);transition:transform .28s}
 .vsheet.on{transform:translateY(0)}
 .vsheet h3{font-family:var(--disp);font-size:23px;letter-spacing:1.5px;color:var(--marquee);margin-bottom:4px}
 .vsheet p{font-size:12px;color:var(--txt-dim);margin-bottom:14px}
@@ -210,7 +232,7 @@ footer{padding:34px 16px 26px;text-align:center;border-top:1px solid var(--line)
 <header class="marquee">
   <div class="bulbs" aria-hidden="true"><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span></div>
   <h1>CHAI INTERVAL</h1>
-  <div class="tagline">Kulhad mein asli interval yahin se shuru hota hai ☕</div>
+  <div class="tagline">Zindagi ki picture abhi lambi hai... ek interval toh banta hai ☕</div>
   <div class="badges-row">
     <span class="hbadge veg">🟢 100% PURE VEG</span>
     <span class="hbadge loc">📍 Amity Gate 2 · Sector 126, Noida</span>
@@ -230,7 +252,7 @@ footer{padding:34px 16px 26px;text-align:center;border-top:1px solid var(--line)
 <div class="searchwrap">
   <div class="searchbox">
     <svg class="sicon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#B4AA95" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-    <input id="search" type="search" placeholder="Search: maggi, pizza, mojito..." autocomplete="off" aria-label="Search menu">
+    <input id="search" type="search" placeholder="Search: maggi, momo, lassi, pizza..." autocomplete="off" aria-label="Search menu">
     <button class="sclear hide" id="sclear" data-act="sclear" aria-label="Clear search">✕</button>
   </div>
 </div>
@@ -243,8 +265,12 @@ footer{padding:34px 16px 26px;text-align:center;border-top:1px solid var(--line)
 
 <footer>
   <div class="f-title">EK AUR KULHAD HO JAYE?</div>
-  <div class="f-sub">📍 Amity University Gate 2, Sector 126, Noida</div>
-  <a class="f-call" href="tel:+918178922055">📞 CALL: 8178 922 055</a>
+  <div class="f-sub">📍 Amity University Gate 2, Sector 126, Noida · Zomato · Swiggy</div>
+  <div class="f-links">
+    <a class="f-btn" href="tel:+918178922055">📞 81789 22055</a>
+    <a class="f-btn" id="f-review" href="#" target="_blank" rel="noopener">★ GOOGLE REVIEW</a>
+    <a class="f-btn insta" id="f-insta" href="#" target="_blank" rel="noopener">📸 @CHAIINTERVAL</a>
+  </div>
   <div class="f-review">KAISI LAGI PICTURE? ★★★★★<br>Google pe review chhod do — <b>aur agli baar dosto ko bhi leke aana!</b></div>
 </footer>
 
@@ -252,7 +278,7 @@ footer{padding:34px 16px 26px;text-align:center;border-top:1px solid var(--line)
 <button class="fab" id="fab" data-act="jump-open">📖 MENU</button>
 <div class="jumper" id="jumper" role="dialog" aria-label="Jump to section"><h4>SEEDHA JUMP KARO ↓</h4><div id="jump-list"></div></div>
 
-<!-- Upsell toast -->
+<!-- Upsell toast (top — always visible on iPhone & Android) -->
 <div class="trailer" id="trailer" aria-live="polite">
   <span class="tr-tag">SAATH MEIN?</span>
   <div class="tr-txt" id="tr-txt"></div>
@@ -293,26 +319,29 @@ footer{padding:34px 16px 26px;text-align:center;border-top:1px solid var(--line)
 var CONFIG = {
   whatsappNumber: "918178922055",
   cafeName: "CHAI INTERVAL",
-  address: "Amity University Gate 2, Sector 126, Noida"
+  address: "Amity University Gate 2, Sector 126, Noida",
+  reviewUrl: "https://share.google/vrUZSTlRC3QkrOcdS",
+  instaUrl: "https://www.instagram.com/chaiinterval?igsh=ejR1MWtwa25zcHU1",
+  instaHandle: "@chaiinterval"
 };
 /* ======================================================== */
 
-/* ---------------- MENU DATA (matches printed menus) ---------------- */
+/* ---------------- MENU DATA — validated against LED boards (Jul 2026) ---------------- */
 var MENU = [
-/* ================= FOOD MENU ================= */
+/* ================= FOOD ================= */
 {id:"combos",tab:"food",chip:"Interval Combos",name:"INTERVAL COMBOS",note:"PURA PAISA VASOOL",items:[
- {n:"Vada Pav + Kulhad Chai",p:72,badge:"JODI",d:"Superhit jodi — alag se lo toh ₹78"},
- {n:"Aloo Tikki Burger + Fries + Coke",p:165},
- {n:"Couple Show — 2 Coffee + 1 Fries",p:275},
- {n:"Pizza Jodi — 1 Small + 1 Medium Pizza",p:280},
- {n:"Housefull 5 — 5 Mojito + 2 Fries + 2 Pizza",p:885,d:"Poore gang ka show 🍿"},
+ {n:"Aloo Tikki Burger Combo",p:165,d:"Burger + Fries + Coke"},
+ {n:"Couple Show",p:240,d:"2 Cold Coffee + 1 Fries"},
+ {n:"Pizza Jodi",p:250,d:"2 Small Pizza — flavours note mein likh do"},
+ {n:"Housefull 5",p:885,badge:"GANG",d:"5 Mojito + 2 Fries + 2 Pizza — 5 dosto ka poora interval"},
 ]},
-{id:"thali",tab:"food",chip:"Blockbuster Thalis",name:"BLOCKBUSTER THALIS",note:"Roz ka fresh, ghar jaisa khana — aaj ka menu counter pe",items:[
- {n:"First Class Thali",p:85,d:"Dal · Sabzi · Rice · Roti · Salad · Papad"},
- {n:"Superhit Thali",p:105,badge:"PICK",d:"Rajma / Chole · Sabzi · Rice · Roti · Raita"},
- {n:"Blockbuster Thali",p:155,d:"Paneer · Dal · Sabzi · Rice · Roti · Raita · Salad · Papad"},
+{id:"thali",tab:"food",chip:"Blockbuster Thalis",name:"BLOCKBUSTER THALIS",note:"Roz ka fresh, ghar jaisa khana",items:[
+ {n:"First Class Thali",p:85,d:"2 Roti / Rice · Sabzi / Dal · Achar · Salad"},
+ {n:"Superhit Thali",p:105,badge:"PICK",d:"2 Roti · Rice · Sabzi · Dal · Salad · Achar"},
+ {n:"Blockbuster Thali",p:155,d:"2 Roti · Rice · Sabzi · Dal · Paneer Sabzi · Salad · Sweet · Raita · Achar"},
 ]},
 {id:"ghar",tab:"food",chip:"Ghar Ka Khana",name:"GHAR KA KHANA",note:"DAILY SHOW",items:[
+ {n:"Dal Churma",p:86},
  {n:"Rajma Chawal",p:95},
  {n:"Chole Bhature",p:98},
  {n:"Chole Chawal",p:105},
@@ -325,52 +354,68 @@ var MENU = [
  {n:"Vegetable Maggi",p:75},
  {n:"Butter Maggi",p:85},
  {n:"Schezwan Maggi",p:85},
+ {n:"Cheese Maggi",p:95},
+ {n:"Cheese Corn Maggi",p:100},
 ]},
 {id:"morning",tab:"food",chip:"Morning Show",name:"THE MORNING SHOW",items:[
  {n:"Bread Jam",p:49},
- {n:"Aloo Paratha",p:70},
- {n:"Mix Paratha",p:70},
+ {n:"Ajwain Paratha",p:65},
+ {n:"Aloo Paratha",p:76},
+ {n:"Mix Paratha",p:76},
+ {n:"Pyaz Paratha",p:76},
+ {n:"Gobhi Paratha",p:76},
  {n:"Idli",p:79},
- {n:"Paneer Paratha",p:120},
+ {n:"Paneer Paratha",p:125},
 ]},
-{id:"rolls",tab:"food",chip:"Rolls & Wraps",name:"ROLL CAMERA! ROLLS & WRAPS",deal:"🎬 ROLL DEAL — koi bhi 2 rolls lo, 3rd milega 50% OFF (order mein auto-apply hota hai)",items:[
+{id:"rolls",tab:"food",chip:"Rolls & Wraps",name:"ROLL CAMERA! ROLLS &amp; WRAPS",deal:"🎬 ROLL DEAL — koi bhi 2 rolls lo, 3rd milega 50% OFF (order mein auto-apply hota hai)",items:[
  {n:"Veg Roll",p:85},
  {n:"Soyabean Roll",p:105},
  {n:"Veg Wrap",p:120},
  {n:"Paneer Roll",p:125},
- {n:"Kadhai Paneer Wrap",p:155},
+ {n:"Paneer Wrap",p:155},
 ]},
 {id:"protein",tab:"food",chip:"Action Hero Corner",name:"ACTION HERO CORNER",note:"PROTEIN ZONE",items:[
  {n:"Veg Bhurji",p:79},
  {n:"Granola Bowl",p:89},
  {n:"Protein Shake",p:99},
 ]},
-{id:"pizza",tab:"food",chip:"Stone-Baked Pizzas",name:"THE MAIN SHOW — STONE-BAKED PIZZAS",note:"SMALL / MEDIUM",items:[
- {n:"Veg Classic",v:[{l:"Small",p:119},{l:"Medium",p:189}]},
- {n:"Corn & Cheese",v:[{l:"Small",p:119},{l:"Medium",p:189}]},
- {n:"Peri-Peri",v:[{l:"Small",p:119},{l:"Medium",p:189}]},
- {n:"Onion & Capsicum",v:[{l:"Small",p:119},{l:"Medium",p:189}]},
- {n:"Farmhouse",v:[{l:"Small",p:129},{l:"Medium",p:199}]},
- {n:"Margherita",v:[{l:"Small",p:129},{l:"Medium",p:199}]},
+{id:"pizza",tab:"food",chip:"The Pizza Script",name:"THE PIZZA SCRIPT",note:"STONE-BAKED · SMALL / MEDIUM",items:[
+ {n:"Veg Classic",v:[{l:"Small",p:129},{l:"Medium",p:199}]},
+ {n:"Corn & Cheese",v:[{l:"Small",p:129},{l:"Medium",p:199}]},
+ {n:"Peri-Peri",v:[{l:"Small",p:139},{l:"Medium",p:199}]},
+ {n:"Onion & Capsicum",v:[{l:"Small",p:129},{l:"Medium",p:199}]},
+ {n:"Farmhouse",v:[{l:"Small",p:149},{l:"Medium",p:219}]},
+ {n:"Margherita",v:[{l:"Small",p:149},{l:"Medium",p:219}]},
 ]},
 {id:"burger",tab:"food",chip:"Burger Show",name:"THE BURGER SHOW",items:[
  {n:"Aloo Tikki Burger",p:69,badge:"HIT"},
- {n:"Aloo Tikki Cheese Burger",p:79},
+ {n:"Aloo Tikki Cheese Burger",p:85},
  {n:"Veg Burger",p:89},
  {n:"Paneer Burger",p:129},
 ]},
-{id:"snacks",tab:"food",chip:"Snacks & Bites",name:"SNACKS & BITES",items:[
+{id:"snacks",tab:"food",chip:"Snacks & Bites",name:"SNACKS &amp; BITES",items:[
  {n:"Bun Maska",p:45},
  {n:"Vada Pav",p:49,badge:"HIT"},
- {n:"Butter Toast",p:55},
- {n:"Potato Shots",p:99},
+ {n:"Butter Toast",p:55,d:"2 pc"},
+ {n:"Sabudana Tikki",p:56,d:"2 pc"},
+ {n:"Hara Bhara Kebab",p:78,d:"4 pc"},
+ {n:"Pizza Fingers",p:86},
+ {n:"Potato Shots",p:88},
+ {n:"Onion Rings",p:95},
  {n:"Cheese Shots",p:119},
 ]},
 {id:"sandwich",tab:"food",chip:"Sandwich Scenes",name:"SANDWICH SCENES",items:[
  {n:"Veg Cold Sandwich",p:85},
  {n:"Veg Grilled Sandwich",p:115},
- {n:"Aloo Sandwich",p:135},
+ {n:"Aloo Cold Sandwich",p:120},
+ {n:"Aloo Grilled Sandwich",p:145},
+ {n:"Paneer Cold Sandwich",p:145},
  {n:"Paneer Grilled Sandwich",p:155},
+]},
+{id:"fries",tab:"food",chip:"Fries Counter",name:"FRIES COUNTER",items:[
+ {n:"Classic Fries",p:95},
+ {n:"Peri-Peri Fries",p:105},
+ {n:"Cheese Fries",p:135},
 ]},
 {id:"jumbo",tab:"food",chip:"Jumbo Sandwich XXL",name:"JUMBO BREAD SANDWICH",note:"XXL SCENE",items:[
  {n:"Chilled Veggie Sandwich",p:120,d:"Jumbo bread"},
@@ -378,62 +423,74 @@ var MENU = [
  {n:"Aloo Sandwich (Jumbo)",p:185},
  {n:"Paneer Sandwich (Jumbo)",p:220},
 ]},
-{id:"starters",tab:"food",chip:"The Trailers",name:"THE TRAILERS",note:"STARTERS & SHARERS",items:[
- {n:"Veg Momos",v:[{l:"4 pc",p:65},{l:"8 pc",p:100}]},
- {n:"Chilli Potato",v:[{l:"Half",p:90},{l:"Full",p:160}]},
- {n:"Honey Chilli Potato",badge:"HIT",v:[{l:"Half",p:110},{l:"Full",p:190}]},
+{id:"starters",tab:"food",chip:"The Trailers",name:"THE TRAILERS",note:"STARTERS &amp; SHARERS",items:[
+ {n:"Chilli Potato",p:139},
+ {n:"Honey Chilli Potato",p:159,badge:"HIT"},
  {n:"Veg Spring Roll",p:135},
  {n:"Veg Manchurian Dry",p:150},
  {n:"Veg Manchurian Gravy",p:170},
 ]},
-{id:"noodles",tab:"food",chip:"Noodle Bar",name:"THE NOODLE BAR",note:"HALF / FULL",items:[
- {n:"Veg Chowmein",v:[{l:"Half",p:90},{l:"Full",p:180}]},
- {n:"Hakka Noodles",v:[{l:"Half",p:100},{l:"Full",p:180}]},
- {n:"Schezwan Noodles",v:[{l:"Half",p:110},{l:"Full",p:190}]},
- {n:"Singapore Noodles",v:[{l:"Half",p:130},{l:"Full",p:210}]},
+{id:"momos",tab:"food",chip:"Momo Franchise",name:"THE MOMO FRANCHISE",note:"4 PC / 8 PC",items:[
+ {n:"Steamed Veg Momo",v:[{l:"4 pc",p:65},{l:"8 pc",p:100}]},
+ {n:"Fried Veg Momo",v:[{l:"4 pc",p:95},{l:"8 pc",p:130}]},
+ {n:"Kurkure Veg Momo",v:[{l:"4 pc",p:110},{l:"8 pc",p:140}]},
+ {n:"Steamed Paneer Momo",v:[{l:"4 pc",p:100},{l:"8 pc",p:150}]},
+ {n:"Fried Paneer Momo",v:[{l:"4 pc",p:130},{l:"8 pc",p:180}]},
+ {n:"Kurkure Paneer Momo",v:[{l:"4 pc",p:135},{l:"8 pc",p:185}]},
 ]},
-{id:"rice",tab:"food",chip:"Fried Rice Reel",name:"THE FRIED RICE REEL",note:"HALF / FULL",items:[
- {n:"Veg Fried Rice",v:[{l:"Half",p:110},{l:"Full",p:190}]},
- {n:"Schezwan Fried Rice",v:[{l:"Half",p:130},{l:"Full",p:210}]},
- {n:"Chilli Garlic Rice",v:[{l:"Half",p:130},{l:"Full",p:210}]},
+{id:"noodles",tab:"food",chip:"Noodle Twist",name:"THE NOODLE TWIST",note:"FULL PLATE",items:[
+ {n:"Desi Chowmein",p:120},
+ {n:"Hakka Noodles",p:159},
+ {n:"Chilli Garlic Noodles",p:179},
+ {n:"Schezwan Noodles",p:179},
 ]},
-{id:"pasta",tab:"food",chip:"Pasta Cut",name:"THE PASTA CUT",items:[
- {n:"White Sauce Pasta",p:155},
+{id:"rice",tab:"food",chip:"Fried Rice Cut",name:"THE FRIED RICE CUT",note:"FULL PLATE",items:[
+ {n:"Veg Fried Rice",p:139},
+ {n:"Schezwan Fried Rice",p:149},
+ {n:"Chilli Garlic Fried Rice",p:149},
+ {n:"Singapore Fried Rice",p:169},
+]},
+{id:"pasta",tab:"food",chip:"Pasta Play",name:"THE PASTA PLAY",items:[
  {n:"Red Sauce Pasta",p:155},
- {n:"Pink Sauce Pasta",p:165},
- {n:"Mix Sauce Pasta",p:165},
-]},
-{id:"fries",tab:"food",chip:"Fries Counter",name:"FRIES COUNTER",items:[
- {n:"Classic Fries",p:95},
- {n:"Peri-Peri Fries",p:105},
- {n:"Cheese Fries",p:135},
+ {n:"White Sauce Pasta",p:160},
+ {n:"Pink Sauce Pasta",p:175},
+ {n:"Mix Sauce Pasta",p:175},
 ]},
 /* ================= DRINKS & DESSERTS ================= */
-{id:"kulhad",tab:"drinks",chip:"The Chai Counter",name:"THE CHAI COUNTER",note:"SIGNATURE KULHAD ₹29 · KULHAD MEIN ASLI INTERVAL",free:true,items:[
+{id:"kulhad",tab:"drinks",chip:"Kulhad Chai",name:"KULHAD CHAI",note:"KULHAD MEIN ASLI INTERVAL · ₹29 SE SHURU",free:true,items:[
  {n:"Masala Chai",p:29,badge:"HIT"},
  {n:"Adrak Chai",p:29},
  {n:"Elaichi Chai",p:29},
- {n:"Gud (Jaggery) Chai",p:29},
  {n:"Chocolate Chai",p:39,d:"Flavoured kulhad"},
  {n:"Rose Chai",p:39,d:"Flavoured kulhad"},
- {n:"Mango Chai",p:39,d:"Flavoured kulhad"},
+]},
+{id:"chaicombos",tab:"drinks",chip:"Chai ke Combos",name:"CHAI KE COMBOS",note:"SABSE SASTI JODI",items:[
+ {n:"Chai + Biscuit",p:38},
+ {n:"Chai + Toast",p:50},
+ {n:"Bun Maska + Chai",p:65},
+ {n:"Vada Pav + Chai",p:69},
 ]},
 {id:"coffee",tab:"drinks",chip:"Coffee Bar",name:"THE COFFEE BAR",items:[
- {n:"Black Coffee",p:30},
- {n:"Espresso",p:75},
- {n:"Americano",p:75},
- {n:"Latte",p:95},
- {n:"Cappuccino",p:95},
- {n:"Dalgona Coffee",p:130},
+ {n:"Black Coffee",p:29},
+ {n:"Desi Coffee",p:40},
+ {n:"Espresso",p:69},
+ {n:"Americano",p:69},
+ {n:"Latte",p:89},
+ {n:"Cappuccino",p:89},
+ {n:"Dalgona Coffee",p:129},
+ {n:"Bournvita Milk",p:70},
 ]},
 {id:"ice",tab:"drinks",chip:"Coffee On Ice",name:"COFFEE ON ICE",items:[
- {n:"Iced Americano",p:60},
- {n:"Iced Latte",p:70},
- {n:"Iced Cappuccino",p:75},
- {n:"Classic Cold Coffee",p:80},
+ {n:"Iced Americano",p:75},
+ {n:"Iced Latte",p:95},
+ {n:"Iced Cappuccino",p:95},
+ {n:"Classic Cold Coffee",p:80,d:"Add ice cream +₹20 — note mein likh do"},
+ {n:"KitKat Cold Coffee",p:110},
+ {n:"Oreo Cold Coffee",p:110},
+ {n:"Hazelnut Cold Coffee",p:110},
 ]},
-{id:"budget",tab:"drinks",chip:"Budget Blockbusters",name:"BUDGET BLOCKBUSTERS",note:"₹45 SE SHURU — pocket friendly, full taste, students ke liye",items:[
- {n:"Fresh Lemonade",p:45},
+{id:"budget",tab:"drinks",chip:"Budget Blockbusters",name:"BUDGET BLOCKBUSTERS",note:"₹45 SE SHURU — students ke liye",items:[
+ {n:"Fresh Lemonade",p:45,d:"Fresh lemon & chilled water — without soda"},
  {n:"Fresh Lime Soda",p:55},
  {n:"Mint Mojito",p:65,badge:"HIT"},
  {n:"Lemon Ice Tea",p:65},
@@ -443,27 +500,33 @@ var MENU = [
  {n:"Peach Ice Tea",p:75},
  {n:"Green Apple Ice Tea",p:75},
 ]},
-{id:"green",tab:"drinks",chip:"Green & Light",name:"GREEN & LIGHT",items:[
- {n:"Honey Lemon Green Tea",p:59},
- {n:"Lemon Tea",p:69},
+{id:"green",tab:"drinks",chip:"Green & Light",name:"GREEN &amp; LIGHT",items:[
+ {n:"Green Tea",p:45},
+ {n:"Honey Lemon Green Tea",p:55},
+ {n:"Lemon Tea",p:65},
 ]},
-{id:"shakes",tab:"drinks",chip:"Superhit Shakes",name:"SUPERHIT SHAKES",note:"FLAT ₹95",items:[
+{id:"lassi",tab:"drinks",chip:"Lassi Scene",name:"THE LASSI SCENE",items:[
+ {n:"Meethi Lassi",p:69},
+ {n:"Masala Lassi",p:59},
+ {n:"Rose Lassi",p:79},
+]},
+{id:"shakes",tab:"drinks",chip:"Superhit Shakes",name:"SUPERHIT SHAKES",note:"₹95 SE — Oreo & KitKat ₹105, baaki sab ₹95",items:[
  {n:"Chocolate Shake",p:95},
- {n:"Oreo Shake",p:95,badge:"HIT"},
- {n:"KitKat Shake",p:95},
- {n:"Butterscotch Shake",p:95},
  {n:"Vanilla Shake",p:95},
+ {n:"Butterscotch Shake",p:95},
  {n:"Strawberry Shake",p:95},
  {n:"Mango Shake",p:95},
  {n:"Banana Shake",p:95},
+ {n:"Oreo Shake",p:105,badge:"HIT"},
+ {n:"KitKat Shake",p:105},
 ]},
-{id:"vip",tab:"drinks",chip:"VIP Box Shakes",name:"VIP BOX — GOURMET SHAKES",note:"Thick, loaded & topped — poora paisa vasool glass",items:[
+{id:"vip",tab:"drinks",chip:"VIP Box Shakes",name:"VIP BOX — GOURMET OVERLOAD",note:"Thick, loaded & topped — poora paisa vasool glass",items:[
  {n:"Oreo Overload",p:200},
  {n:"KitKat Crunch",p:200},
  {n:"Chocolate Overload",p:200},
  {n:"Nutella Overload",p:250,badge:"VIP"},
 ]},
-{id:"mocktails",tab:"drinks",chip:"Premiere Mocktails",name:"PREMIERE MOCKTAILS",items:[
+{id:"fizz",tab:"drinks",chip:"Crisp Fizz",name:"CRISP FIZZ — PREMIUM COOLERS",note:"SPARKLING &amp; FRESH",items:[
  {n:"Crispy Mint Mojito",p:180},
  {n:"Blue Lagoon",p:180},
  {n:"Fresh Lime Squeeze",p:180},
@@ -471,33 +534,44 @@ var MENU = [
  {n:"Cranberry Punch",p:180},
  {n:"Pina Colada",p:200},
 ]},
-{id:"dessert",tab:"drinks",chip:"Climax Desserts",name:"THE CLIMAX DESSERTS",items:[
+{id:"gourmet",tab:"drinks",chip:"Gourmet Combos",name:"GOURMET COMBOS",note:"PAIR IT LIKE A PRO — seedha bachat",items:[
+ {n:"The Overload Duo",p:249,was:279,d:"Koi bhi Overload Shake + Aloo Tikki Cheese Burger · flavour note mein"},
+ {n:"Shake & Crunch",p:265,was:305,d:"Koi bhi Overload Shake + Peri-Peri Fries · flavour note mein"},
+ {n:"Sweet Climax",p:259,was:299,d:"Overload Shake + Hot Brownie · flavour note mein"},
+ {n:"Fizz & Slice",p:269,was:299,d:"Koi bhi Crisp Fizz + Small Pizza · flavours note mein"},
+ {n:"Royal Date — For 2",p:479,was:535,d:"2 Overload Shakes + Cheese Fries"},
+ {n:"Gourmet Housefull",p:549,was:623,d:"2 Crisp Fizz + 2 Cheese Burgers + Peri-Peri Fries"},
+]},
+{id:"dessert",tab:"drinks",chip:"Climax Desserts",name:"THE CLIMAX — DESSERTS",note:"MEETHA SCENE",items:[
  {n:"Ice Cream Scoop",p:69},
  {n:"Kulhad Badam Ragda",p:69,badge:"SPL"},
  {n:"Hot Brownie",p:99},
+ {n:"Hot Brownie with Ice Cream",p:120},
 ]},
 ];
 
-var DRINK_CATS = {kulhad:1,coffee:1,ice:1,budget:1,green:1,shakes:1,vip:1,mocktails:1};
-var FOOD_CATS  = {combos:1,thali:1,ghar:1,maggi:1,morning:1,rolls:1,protein:1,pizza:1,burger:1,snacks:1,sandwich:1,jumbo:1,starters:1,noodles:1,rice:1,pasta:1,fries:1};
+var DRINK_CATS = {kulhad:1,chaicombos:1,coffee:1,ice:1,budget:1,green:1,lassi:1,shakes:1,vip:1,fizz:1,gourmet:1};
+var FOOD_CATS  = {combos:1,thali:1,ghar:1,maggi:1,morning:1,rolls:1,protein:1,pizza:1,burger:1,snacks:1,sandwich:1,fries:1,jumbo:1,starters:1,momos:1,noodles:1,rice:1,pasta:1};
 
-/* Pairing brain — cat -> suggestion */
+/* Pairing brain — cat -> suggestion (prices validated) */
 var UPSELL = {
  kulhad:  {n:"Vada Pav",p:49,cat:"snacks",msg:"Chai ke saath <b>Vada Pav</b> — superhit jodi 🎬"},
  coffee:  {n:"Bun Maska",p:45,cat:"snacks",msg:"Coffee ke saath <b>Bun Maska</b>?"},
  ice:     {n:"Bun Maska",p:45,cat:"snacks",msg:"Cold coffee + <b>Bun Maska</b> = classic scene"},
  green:   {n:"Bun Maska",p:45,cat:"snacks",msg:"Light tea, light bite — <b>Bun Maska</b>?"},
+ lassi:   {n:"Aloo Paratha",p:76,cat:"morning",msg:"Lassi hai toh <b>Aloo Paratha</b> banta hai 😋"},
  budget:  {n:"Vada Pav",p:49,cat:"snacks",msg:"Drink ke saath <b>Vada Pav</b>?"},
  shakes:  {n:"Hot Brownie",p:99,cat:"dessert",msg:"Shake + <b>Hot Brownie</b> = blockbuster climax 🍫"},
- vip:     {n:"Hot Brownie",p:99,cat:"dessert",msg:"VIP shake ke saath <b>Hot Brownie</b> 👑"},
- mocktails:{n:"Potato Shots",p:99,cat:"snacks",msg:"Mocktail ke saath <b>Potato Shots</b>?"},
+ vip:     {n:"Hot Brownie",p:99,cat:"dessert",msg:"Overload ke saath <b>Hot Brownie</b> 👑"},
+ fizz:    {n:"Potato Shots",p:88,cat:"snacks",msg:"Fizz ke saath <b>Potato Shots</b>?"},
  burger:  {n:"Classic Fries",p:95,cat:"fries",msg:"Burger bina fries? <b>Scene adhoora hai</b> 🍟"},
  pizza:   {n:"Peri-Peri Fries",p:105,cat:"fries",msg:"Pizza ke saath <b>Peri-Peri Fries</b>?"},
  maggi:   {n:"Masala Chai",p:29,cat:"kulhad",msg:"Maggi + <b>Kulhad Chai</b> = hostel wali feeling ☕"},
- thali:   {n:"Fresh Lemonade",p:45,cat:"budget",msg:"Thali ke saath thandi <b>Lemonade</b>?"},
- ghar:    {n:"Masala Chai",p:29,cat:"kulhad",msg:"Khaane ke baad <b>kulhad chai</b> toh banti hai"},
+ thali:   {n:"Masala Lassi",p:59,cat:"lassi",msg:"Thali ke saath <b>Masala Lassi</b>?"},
+ ghar:    {n:"Meethi Lassi",p:69,cat:"lassi",msg:"Ghar ke khane ke saath <b>Meethi Lassi</b>"},
  morning: {n:"Masala Chai",p:29,cat:"kulhad",msg:"Morning show ka hero — <b>kulhad chai</b> ☕"},
  starters:{n:"Mint Mojito",p:65,cat:"budget",msg:"Sharers ke saath <b>Mint Mojito</b>?"},
+ momos:   {n:"Mint Mojito",p:65,cat:"budget",msg:"Momo + <b>Mojito</b> — M&M jodi 🌿"},
  noodles: {n:"Mint Mojito",p:65,cat:"budget",msg:"Spicy noodles, thanda <b>Mint Mojito</b> 🌿"},
  rice:    {n:"Mint Mojito",p:65,cat:"budget",msg:"Fried rice + <b>mojito</b> — sahi jodi"},
  sandwich:{n:"Peach Ice Tea",p:75,cat:"budget",msg:"Sandwich ke saath <b>Peach Ice Tea</b>?"},
@@ -505,8 +579,19 @@ var UPSELL = {
  rolls:   {n:"Lemon Ice Tea",p:65,cat:"budget",msg:"Roll ke saath <b>Lemon Ice Tea</b>?"},
  pasta:   {n:"Peach Ice Tea",p:75,cat:"budget",msg:"Pasta ke saath <b>Peach Ice Tea</b>?"},
  fries:   {n:"Masala Chai",p:29,cat:"kulhad",msg:"₹29 ka <b>kulhad</b> aur scene complete 🎬"},
- protein: {n:"Honey Lemon Green Tea",p:59,cat:"green",msg:"Gains ke saath <b>green tea</b> 💪"},
+ protein: {n:"Green Tea",p:45,cat:"green",msg:"Gains ke saath <b>Green Tea</b> 💪"},
+ snacks:  {n:"Masala Chai",p:29,cat:"kulhad",msg:"Snack ke saath <b>kulhad chai</b> — ₹29 hi toh hai"},
 };
+
+/* Combo-swap brain: items in cart -> cheaper official combo */
+var OVERLOADS = {"Oreo Overload":1,"KitKat Crunch":1,"Chocolate Overload":1};
+var SWAPS = [
+ {need:[{n:"Vada Pav"},{cat:"kulhad",maxP:29}], combo:{n:"Vada Pav + Chai",cat:"chaicombos",p:69}},
+ {need:[{n:"Bun Maska"},{cat:"kulhad",maxP:29}], combo:{n:"Bun Maska + Chai",cat:"chaicombos",p:65}},
+ {need:[{overload:true},{n:"Hot Brownie"}], combo:{n:"Sweet Climax",cat:"gourmet",p:259}},
+ {need:[{overload:true},{n:"Peri-Peri Fries"}], combo:{n:"Shake & Crunch",cat:"gourmet",p:265}},
+ {need:[{overload:true},{n:"Aloo Tikki Cheese Burger"}], combo:{n:"The Overload Duo",cat:"gourmet",p:249}},
+];
 
 var ADDONS = [
  {n:"Masala Chai",p:29,cat:"kulhad"},
@@ -518,14 +603,16 @@ var ADDONS = [
 ];
 
 /* ---------------- STATE ---------------- */
-var cart = [];                    // {key,n,l,p,qty,cat}
+var cart = [];
 var activeTab = "food";
 var orderType = "dinein";
 var order = {name:"",table:"",note:""};
 var upsellShown = {};
 var pendingUpsell = null;
 var trailerTimer = null;
-var vsCat = null, vsIdx = null;   // open variant item
+var vsCat = null, vsIdx = null;
+var orderSent = false;
+var searching = false;
 
 /* ---------------- HELPERS ---------------- */
 function $(id){return document.getElementById(id)}
@@ -545,7 +632,7 @@ function cartTotal(){var s=0;for(var i=0;i<cart.length;i++)s+=cart[i].p*cart[i].
 function escA(s){return String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;")}
 function badgeHTML(b){
   if(!b)return"";
-  var map={HIT:["b-hit","HIT"],PICK:["b-pick","MOST PICKED"],VIP:["b-vip","VIP"],SPL:["b-spl","SPECIAL"],JODI:["b-pick","JODI"]};
+  var map={HIT:["b-hit","HIT"],PICK:["b-pick","MOST PICKED"],VIP:["b-vip","VIP"],SPL:["b-spl","SPECIAL"],GANG:["b-gang","GANG SHOW"]};
   var m=map[b]||["b-pick",b];
   return '<span class="it-badge '+m[0]+'">'+m[1]+'</span>';
 }
@@ -559,11 +646,17 @@ function buildMenu(){
     if(cat.deal)h+='<div class="sec-banner">'+cat.deal+'</div>';
     if(cat.free)h+='<div class="freebies"><span class="freebie"><b>FREE</b> extra masala / adrak</span><span class="freebie">Sugar: regular · kam · zero</span><span class="freebie">Full / toned milk — choice aapki</span><span class="freebie">Brown sugar / honey bhi</span></div>';
     cat.items.forEach(function(it,idx){
-      var price = it.v
-        ? '₹'+it.v[0].p+' <small>/ ₹'+it.v[1].p+' · '+it.v[0].l+' / '+it.v[1].l+'</small>'
-        : '₹'+it.p;
+      var price;
+      if(it.v){
+        price='₹'+it.v[0].p+' <small>/ ₹'+it.v[1].p+' · '+it.v[0].l+' / '+it.v[1].l+'</small>';
+      }else if(it.was){
+        price='<s>₹'+it.was+'</s>₹'+it.p;
+      }else{
+        price='₹'+it.p;
+      }
+      var saveB = it.was ? '<span class="it-badge b-save">BACHAT ₹'+(it.was-it.p)+'</span>' : '';
       h+='<div class="item" data-name="'+escA(it.n.toLowerCase())+'">'
-        +'<div class="it-info"><div class="nameline"><span class="vegdot" aria-label="veg"></span><span class="it-name">'+escA(it.n)+'</span>'+badgeHTML(it.badge)+'</div>'
+        +'<div class="it-info"><div class="nameline"><span class="vegdot" aria-label="veg"></span><span class="it-name">'+escA(it.n)+'</span>'+badgeHTML(it.badge)+saveB+'</div>'
         +(it.d?'<div class="it-desc">'+escA(it.d)+'</div>':'')
         +'<div class="it-price">'+price+'</div></div>'
         +'<div class="it-ctl" id="ctl-'+cat.id+'-'+idx+'">'+ctlHTML(cat.id,idx,it)+'</div>'
@@ -617,6 +710,7 @@ function addToCart(catId,n,l,p){
   var k=keyOf(n,l),ex=inCart(k);
   if(ex)ex.qty++;else cart.push({key:k,n:n,l:l,p:p,qty:1,cat:catId});
   try{if(navigator.vibrate)navigator.vibrate(12)}catch(e){}
+  orderSent=false;
   syncUI();
 }
 function changeQty(k,d){
@@ -624,7 +718,7 @@ function changeQty(k,d){
   ex.qty+=d;
   if(ex.qty<=0)cart=cart.filter(function(c){return c.key!==k});
   syncUI();
-  if($("sheet").classList.contains("on"))renderTicket();
+  if($("sheet").classList.contains("on")&&!orderSent)renderTicket();
   if($("vsheet").classList.contains("on"))renderVSheet();
 }
 function syncUI(){
@@ -641,7 +735,7 @@ function syncUI(){
   }
 }
 
-/* ---------------- UPSELL ---------------- */
+/* ---------------- UPSELL (top toast) ---------------- */
 function maybeUpsell(catId){
   var u=UPSELL[catId];
   if(!u||upsellShown[catId])return;
@@ -682,8 +776,45 @@ function closeVSheet(){
 }
 
 /* ---------------- ORDER SHEET ---------------- */
-function openCart(){hideTrailer();renderTicket();$("sheet").classList.add("on");$("overlay").classList.add("on")}
+function openCart(){hideTrailer();if(orderSent){renderThanks()}else{renderTicket()}$("sheet").classList.add("on");$("overlay").classList.add("on")}
 function closeCart(){$("sheet").classList.remove("on");if(!$("vsheet").classList.contains("on")&&!$("jumper").classList.contains("on"))$("overlay").classList.remove("on")}
+
+function findSwap(){
+  for(var s=0;s<SWAPS.length;s++){
+    var sw=SWAPS[s];
+    if(byName(sw.combo.n))continue;
+    var found=[],ok=true;
+    for(var r=0;r<sw.need.length;r++){
+      var req=sw.need[r],hit=null;
+      for(var i=0;i<cart.length;i++){
+        var c=cart[i];
+        if(found.indexOf(c)>-1)continue;
+        if(req.n&&c.n===req.n){hit=c;break}
+        if(req.overload&&OVERLOADS[c.n]){hit=c;break}
+        if(req.cat&&c.cat===req.cat&&(!req.maxP||c.p<=req.maxP)){hit=c;break}
+      }
+      if(!hit){ok=false;break}
+      found.push(hit);
+    }
+    if(ok){
+      var sum=0;found.forEach(function(f){sum+=f.p});
+      var save=sum-sw.combo.p;
+      if(save>0)return {swap:sw,parts:found,save:save};
+    }
+  }
+  return null;
+}
+function doSwap(){
+  var f=findSwap();if(!f)return;
+  var label="";
+  f.parts.forEach(function(p){
+    if(OVERLOADS[p.n])label=p.n;
+    p.qty--;
+  });
+  cart=cart.filter(function(c){return c.qty>0});
+  addToCart(f.swap.combo.cat,f.swap.combo.n,label,f.swap.combo.p);
+  renderTicket();
+}
 
 function renderTicket(){
   var b=$("tk-body");
@@ -693,28 +824,24 @@ function renderTicket(){
   }
   var h="";
   cart.forEach(function(c){
-    h+='<div class="tk-line"><div class="n">'+escA(c.n)+(c.l?'<small>'+c.l+'</small>':'')+'</div>'
+    h+='<div class="tk-line"><div class="n">'+escA(c.n)+(c.l?'<small>'+escA(c.l)+'</small>':'')+'</div>'
       +'<div class="tk-qty"><button data-act="dec" data-key="'+escA(c.key)+'" aria-label="Remove one">−</button><span class="q">'+c.qty+'</span><button data-act="inc" data-key="'+escA(c.key)+'" aria-label="Add one">+</button></div>'
       +'<div class="amt">₹'+(c.p*c.qty)+'</div></div>';
   });
   var rd=rollDiscount();
   if(rd>0)h+='<div class="tk-discount"><span>🎬 ROLL DEAL — 3rd roll 50% off</span><span>−₹'+rd+'</span></div>';
 
-  /* jodi swap */
-  var vp=byName("Vada Pav"),ch=null;
-  cart.forEach(function(c){if(!ch&&c.cat==="kulhad"&&c.p===29)ch=c});
-  if(vp&&ch&&!byName("Vada Pav + Kulhad Chai")){
-    h+='<div class="nudge swapb"><div>In dono ki <b>jodi bana lo</b> — Interval Combo ₹72, seedha <b>₹6 bachao</b></div><button data-act="swap">JODI BANAO</button></div>';
+  var f=findSwap();
+  if(f){
+    h+='<div class="nudge swapb"><div><b>'+escA(f.swap.combo.n)+'</b> combo bana lo — same cheezein, seedha <b>₹'+f.save+' bachao</b></div><button data-act="swap">JODI BANAO</button></div>';
   }
-  /* balance nudges */
   var hasDrink=false,hasFood=false;
-  cart.forEach(function(c){if(DRINK_CATS[c.cat])hasDrink=true;if(FOOD_CATS[c.cat])hasFood=true;if(c.n.indexOf("Chai")>-1||c.n.indexOf("Coffee")>-1||c.n.indexOf("Mojito")>-1)hasDrink=true});
+  cart.forEach(function(c){if(DRINK_CATS[c.cat])hasDrink=true;if(FOOD_CATS[c.cat])hasFood=true;if(c.n.indexOf("Chai")>-1||c.n.indexOf("Coffee")>-1||c.n.indexOf("Mojito")>-1||c.n.indexOf("Lassi")>-1)hasDrink=true});
   if(!hasDrink){
     h+='<div class="nudge"><div>Bina drink ke interval? <b>Kulhad Masala Chai sirf ₹29</b> ☕</div><button data-act="quickadd" data-cat="kulhad" data-n="Masala Chai" data-p="29">+ ₹29</button></div>';
   }else if(!hasFood){
     h+='<div class="nudge"><div>Saath mein kuch khaane ko? <b>Vada Pav sirf ₹49</b> 🍔</div><button data-act="quickadd" data-cat="snacks" data-n="Vada Pav" data-p="49">+ ₹49</button></div>';
   }
-  /* addon strip */
   var avail=ADDONS.filter(function(a){return !byName(a.n)});
   if(avail.length){
     h+='<div class="addons"><h4>🍿 SAATH MEIN KUCH AUR?</h4><div class="addon-strip">';
@@ -725,7 +852,6 @@ function renderTicket(){
   }
   h+='<div class="tk-total"><span>TOTAL<small>Pay at counter — UPI / Cash</small></span><span>₹'+cartTotal()+'</span></div>';
 
-  /* form */
   h+='<div class="tk-form">'
     +'<div class="otype">'
     +'<button data-act="otype" data-t="dinein" class="'+(orderType==="dinein"?"sel":"")+'">🪑 DINE-IN</button>'
@@ -733,7 +859,7 @@ function renderTicket(){
     +'</div>'
     +(orderType==="dinein"?'<input id="f-table" data-field="table" inputmode="numeric" placeholder="Table number *" value="'+escA(order.table)+'">':'')
     +'<input id="f-name" data-field="name" placeholder="Aapka naam '+(orderType==="takeaway"?"*":"(optional)")+'" value="'+escA(order.name)+'">'
-    +'<textarea id="f-note" data-field="note" placeholder="Koi khaas baat? (kam sugar, extra masala, zero spice...)">'+escA(order.note)+'</textarea>'
+    +'<textarea id="f-note" data-field="note" placeholder="Koi khaas baat? (combo flavour, kam sugar, extra masala...)">'+escA(order.note)+'</textarea>'
     +'<div class="formerr" id="formerr"></div>'
     +'<a class="waorder" id="wa-cta" data-act="wa" href="#" target="_blank" rel="noopener">'
     +'<svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M12 2A10 10 0 0 0 2 12a9.9 9.9 0 0 0 1.5 5.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.7 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1a15 15 0 0 1-6.6-5.8c-.5-.8-.9-1.8-.9-2.8 0-.9.5-1.4.7-1.6.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.6.3.1.5.1.7-.1l.8-.9c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .5-.2 1.2Z"/></svg>'
@@ -742,6 +868,30 @@ function renderTicket(){
     +'<div class="tk-foot">Order WhatsApp pe jaata hai — counter turant confirm karega ✅<br>'+escA(CONFIG.address)+'</div>';
 
   b.innerHTML=h;
+}
+
+/* ---------------- POST-ORDER: THANKS + REVIEW + INSTA ---------------- */
+function renderThanks(){
+  var b=$("tk-body");
+  b.innerHTML=
+    '<div class="thanks">'
+    +'<div class="t-stars">★ ★ ★ ★ ★</div>'
+    +'<div class="t-big">ORDER GAYA! 🎬</div>'
+    +'<div class="t-sub">WhatsApp pe send ho gaya? Counter 2 minute mein confirm karega.<br>Tab tak seat pe relax — interval enjoy karo.</div>'
+    +'</div>'
+    +'<div class="t-divider">INTERVAL MEIN EK CHHOTA SA KAAM</div>'
+    +'<div class="t-card">'
+    +'<div class="tc-h">Kaisi lagi picture? ⭐</div>'
+    +'<div class="tc-s">30 second ka Google review — hamare liye blockbuster opening hai. Naye students aapke review se hi aate hain!</div>'
+    +'<a class="t-go rev" href="'+CONFIG.reviewUrl+'" target="_blank" rel="noopener">★ GOOGLE PE REVIEW DO</a>'
+    +'</div>'
+    +'<div class="t-card">'
+    +'<div class="tc-h">Behind the scenes dekhne hain? 📸</div>'
+    +'<div class="tc-s">Naye items ki trailers, offers ki breaking news — sab pehle Instagram pe. '+CONFIG.instaHandle+' follow karo!</div>'
+    +'<a class="t-go ig" href="'+CONFIG.instaUrl+'" target="_blank" rel="noopener">FOLLOW '+CONFIG.instaHandle.toUpperCase()+'</a>'
+    +'</div>'
+    +'<button class="t-again" data-act="new-order">🍿 NAYA ORDER SHURU KARO</button>'
+    +'<a class="t-resend" href="#" data-act="resend">WhatsApp nahi khula? Order dubara bhejo</a>';
 }
 
 /* ---------------- WHATSAPP (no prices in message) ---------------- */
@@ -757,10 +907,16 @@ function buildWaURL(){
   msg+="✅ Please confirm my order";
   return "https://wa.me/"+CONFIG.whatsappNumber+"?text="+encodeURIComponent(msg);
 }
+function validateOrder(){
+  if(cart.length===0)return "Order khaali hai — pehle kuch add karo 🎬";
+  if(orderType==="dinein"&&!order.table.trim())return "Table number daal do — order wahin pahunchega 🪑";
+  if(orderType==="takeaway"&&!order.name.trim())return "Naam daal do — parcel pe likhna hai ✍️";
+  return null;
+}
 function showErr(m){var e=$("formerr");if(e){e.textContent=m;e.classList.add("on")}}
 function clearErr(){var e=$("formerr");if(e)e.classList.remove("on")}
 
-/* ---------------- JUMP ---------------- */
+/* ---------------- JUMP / TABS / SEARCH ---------------- */
 function openJump(){buildJump();$("jumper").classList.add("on");$("overlay").classList.add("on")}
 function closeJump(){$("jumper").classList.remove("on");if(!$("sheet").classList.contains("on")&&!$("vsheet").classList.contains("on"))$("overlay").classList.remove("on")}
 function jumpTo(secId){
@@ -778,11 +934,24 @@ function switchTab(t){
   buildChips();buildJump();
   applySearch($("search").value);
 }
-
-/* ---------------- SEARCH ---------------- */
+function countMatches(tab,q){
+  var n=0;
+  document.querySelectorAll("#page-"+tab+" .item").forEach(function(it){
+    if(it.dataset.name.indexOf(q)>-1)n++;
+  });
+  return n;
+}
 function applySearch(q){
   q=(q||"").trim().toLowerCase();
   $("sclear").classList.toggle("hide",!q);
+  /* smart tab switch: if nothing here but other tab has it, hop over */
+  if(q&&!searching){
+    var here=countMatches(activeTab,q);
+    var other=activeTab==="food"?"drinks":"food";
+    if(here===0&&countMatches(other,q)>0){
+      searching=true;switchTab(other);searching=false;return;
+    }
+  }
   var any=false;
   document.querySelectorAll("#page-"+activeTab+" .section").forEach(function(sec){
     var secAny=false;
@@ -808,7 +977,7 @@ var io=new IntersectionObserver(function(es){
   });
 },{rootMargin:"-30% 0px -60% 0px"});
 
-/* ---------------- EVENT DELEGATION (one listener, zero dead buttons) ---------------- */
+/* ---------------- EVENT DELEGATION ---------------- */
 document.addEventListener("click",function(e){
   var t=e.target.closest("[data-act]");
   if(!t)return;
@@ -817,7 +986,6 @@ document.addEventListener("click",function(e){
   if(act==="add"){
     var cat=catById(t.dataset.cat),it=cat.items[+t.dataset.idx];
     addToCart(cat.id,it.n,"",it.p);
-    t.classList.add("flash");t.textContent="✓";
     setTimeout(function(){maybeUpsell(cat.id)},350);
   }
   else if(act==="vopen"){openVSheet(t.dataset.cat,+t.dataset.idx)}
@@ -835,38 +1003,42 @@ document.addEventListener("click",function(e){
   else if(act==="close-cart"){closeCart()}
   else if(act==="overlay"){closeCart();closeVSheet();closeJump()}
   else if(act==="otype"){orderType=t.dataset.t;renderTicket()}
-  else if(act==="swap"){
-    var vp=byName("Vada Pav"),ch=null;
-    cart.forEach(function(c){if(!ch&&c.cat==="kulhad"&&c.p===29)ch=c});
-    if(vp&&ch){
-      vp.qty--;ch.qty--;
-      cart=cart.filter(function(c){return c.qty>0});
-      addToCart("combos","Vada Pav + Kulhad Chai","",72);
-      renderTicket();
-    }
-  }
+  else if(act==="swap"){doSwap()}
   else if(act==="jump"){jumpTo(t.dataset.sec)}
   else if(act==="jump-open"){$("jumper").classList.contains("on")?closeJump():openJump()}
   else if(act==="tab"){switchTab(t.dataset.tab);window.scrollTo({top:0,behavior:"smooth"})}
   else if(act==="sclear"){$("search").value="";applySearch("")}
+  else if(act==="new-order"){cart=[];orderSent=false;order.note="";syncUI();closeCart()}
+  else if(act==="resend"){
+    e.preventDefault();
+    var u=buildWaURL();
+    var w=window.open(u,"_blank");if(!w)location.href=u;
+  }
   else if(act==="wa"){
-    if(cart.length===0){e.preventDefault();return}
-    if(orderType==="dinein"&&!order.table.trim()){e.preventDefault();showErr("Table number daal do — order wahin pahunchega 🪑");var ft=$("f-table");if(ft)ft.focus();return}
-    if(orderType==="takeaway"&&!order.name.trim()){e.preventDefault();showErr("Naam daal do — parcel pe likhna hai ✍️");var fn=$("f-name");if(fn)fn.focus();return}
+    var err=validateOrder();
+    if(err){e.preventDefault();showErr(err);var ff=$("f-table")||$("f-name");if(ff)ff.focus();return}
     clearErr();
     t.href=buildWaURL();
-    /* let the default <a target=_blank> open WhatsApp */
+    orderSent=true;
+    setTimeout(function(){if(orderSent&&$("sheet").classList.contains("on"))renderThanks()},1400);
   }
 });
 
-/* form inputs — keep state through re-renders */
+/* keep form state through re-renders */
 document.addEventListener("input",function(e){
   var f=e.target.dataset&&e.target.dataset.field;
   if(f){order[f]=e.target.value;clearErr()}
   if(e.target.id==="search")applySearch(e.target.value);
 });
 
+/* when they come back from WhatsApp, show the thank-you view */
+document.addEventListener("visibilitychange",function(){
+  if(!document.hidden&&orderSent&&$("sheet").classList.contains("on"))renderThanks();
+});
+
 /* ---------------- INIT ---------------- */
+$("f-review").href=CONFIG.reviewUrl;
+$("f-insta").href=CONFIG.instaUrl;
 buildMenu();
 document.querySelectorAll(".section").forEach(function(s){io.observe(s)});
 </script>
