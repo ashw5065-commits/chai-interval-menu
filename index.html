@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content">
 <title>Chai Interval — Menu | Amity Gate 2, Sector 126, Noida</title>
-<meta name="description" content="Chai Interval — 100% Pure Veg. Kulhad chai ₹29 se shuru. Scan, order on WhatsApp, interval enjoy karo.">
+<meta name="description" content="Chai Interval — 100% Pure Veg. Kulhad chai ₹29 se shuru. Scan, order on WhatsApp, UPI se pay karo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@500;700;800&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
@@ -22,7 +22,9 @@
   --hit:#E23B30;
   --wa:#1FAF53;
   --insta:#C13584;
-  --gold:#E8C87A;
+  --gpay:#3B76E8;
+  --ppe:#5F259F;
+  --ptm:#0A9EDB;
   --txt:#F5EFE2;
   --txt-dim:#B4AA95;
   --line:#2E2A20;
@@ -41,14 +43,14 @@ input,textarea{font-family:inherit}
 :focus-visible{outline:2px solid var(--marquee);outline-offset:2px}
 .hide{display:none!important}
 
-/* ---------- MARQUEE HEADER ---------- */
+/* ---------- HEADER ---------- */
 .marquee{background:#000;border-bottom:3px solid var(--marquee);padding:calc(16px + var(--safeT)) 16px 14px;text-align:center}
 .bulbs{display:flex;justify-content:center;gap:9px;margin-bottom:9px}
 .bulb{width:7px;height:7px;border-radius:50%;background:var(--marquee);box-shadow:0 0 6px 1px rgba(255,196,46,.75)}
 .bulb:nth-child(even){animation:blink 1.7s infinite}
 .bulb:nth-child(odd){animation:blink 1.7s .85s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.25;box-shadow:none}}
-@media (prefers-reduced-motion:reduce){.bulb{animation:none!important}.sheet,.vsheet,.jumper,.trailer{transition:none!important}}
+@media (prefers-reduced-motion:reduce){.bulb,.pulse{animation:none!important}.sheet,.vsheet,.jumper,.trailer{transition:none!important}}
 h1{font-family:var(--disp);font-size:44px;letter-spacing:4px;color:var(--marquee);line-height:.95}
 .tagline{font-size:11.5px;color:var(--txt-dim);margin-top:5px}
 .badges-row{display:flex;justify-content:center;gap:8px;margin-top:10px;flex-wrap:wrap}
@@ -57,7 +59,7 @@ h1{font-family:var(--disp);font-size:44px;letter-spacing:4px;color:var(--marquee
 .hbadge.loc{background:var(--screen-2);color:var(--txt-dim);border:1px solid var(--line)}
 .nowshow{background:var(--marquee);color:#000;font-family:var(--disp);font-size:15px;letter-spacing:2.5px;text-align:center;padding:7px 8px}
 
-/* ---------- STICKY NAV ---------- */
+/* ---------- NAV ---------- */
 .navwrap{position:sticky;top:0;z-index:40;background:rgba(19,16,9,.97);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
 .tabs{display:flex;padding:calc(8px + var(--safeT)) 16px 0;gap:10px}
 .tab{flex:1;font-family:var(--disp);font-size:19px;letter-spacing:1.8px;padding:11px 4px 9px;text-align:center;color:var(--txt-dim);border-bottom:3px solid transparent;min-height:46px}
@@ -88,7 +90,7 @@ h1{font-family:var(--disp);font-size:44px;letter-spacing:4px;color:var(--marquee
 .freebie{font-size:11px;font-weight:700;color:var(--txt-dim);background:var(--screen-2);border:1px solid var(--line);border-radius:999px;padding:5px 11px}
 .freebie b{color:var(--veg)}
 
-/* ---------- ITEM ROWS ---------- */
+/* ---------- ITEMS ---------- */
 .item{display:flex;align-items:center;gap:12px;padding:15px 0;border-bottom:1px solid var(--line)}
 .section .item:last-of-type{border-bottom:none}
 .it-info{flex:1;min-width:0}
@@ -125,7 +127,7 @@ footer{padding:34px 16px 26px;text-align:center;border-top:1px solid var(--line)
 .f-review{font-size:11.5px;color:var(--txt-dim);margin-top:16px;line-height:1.6}
 .f-review b{color:var(--marquee)}
 
-/* ---------- JUMP MENU FAB ---------- */
+/* ---------- FAB / JUMP ---------- */
 .fab{position:fixed;right:14px;bottom:calc(20px + var(--safeB));z-index:45;background:#000;color:var(--marquee);border:1.5px solid var(--marquee);font-family:var(--disp);font-size:16px;letter-spacing:2px;padding:12px 18px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.6);transition:bottom .2s}
 .fab.raised{bottom:calc(102px + var(--safeB))}
 .jumper{position:fixed;left:14px;right:14px;bottom:calc(20px + var(--safeB));z-index:65;background:var(--screen-2);border:1.5px solid var(--marquee);border-radius:16px;padding:14px;max-height:60vh;max-height:60dvh;overflow-y:auto;transform:translateY(130%);transition:transform .28s ease;box-shadow:0 10px 34px rgba(0,0,0,.7)}
@@ -135,7 +137,7 @@ footer{padding:34px 16px 26px;text-align:center;border-top:1px solid var(--line)
 .jump-item:last-child{border-bottom:none}
 .jump-item small{color:var(--txt-dim);font-weight:700;font-size:11px}
 
-/* ---------- UPSELL TOAST — TOP (iPhone-safe) ---------- */
+/* ---------- UPSELL TOAST (top — iPhone safe) ---------- */
 .trailer{position:fixed;left:12px;right:12px;top:calc(118px + var(--safeT));z-index:60;background:var(--screen-2);border:1.5px solid var(--marquee);border-radius:14px;padding:14px;display:flex;align-items:center;gap:11px;transform:translateY(-260%);transition:transform .32s ease;box-shadow:0 8px 30px rgba(0,0,0,.65)}
 .trailer.show{transform:translateY(0)}
 .tr-tag{position:absolute;top:-10px;left:14px;background:var(--hit);color:#fff;font-family:var(--disp);font-size:12px;letter-spacing:2px;padding:2px 10px;border-radius:4px}
@@ -152,10 +154,10 @@ footer{padding:34px 16px 26px;text-align:center;border-top:1px solid var(--line)
 .cb-left small{display:block;font-weight:700;font-size:11px;opacity:.72}
 .cb-btn{font-family:var(--disp);font-size:19px;letter-spacing:1.5px;background:#000;color:var(--marquee);padding:12px 20px;border-radius:11px;min-height:48px}
 
-/* ---------- OVERLAY + ORDER SHEET ---------- */
+/* ---------- SHEET ---------- */
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.66);z-index:70;opacity:0;pointer-events:none;transition:opacity .25s}
 .overlay.on{opacity:1;pointer-events:auto}
-.sheet{position:fixed;left:0;right:0;bottom:0;z-index:80;max-height:88vh;max-height:88dvh;overflow-y:auto;-webkit-overflow-scrolling:touch;background:var(--ticket);color:var(--ticket-ink);border-radius:20px 20px 0 0;transform:translateY(105%);transition:transform .3s ease;font-family:var(--mono);padding-bottom:calc(14px + var(--safeB))}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:80;max-height:90vh;max-height:90dvh;overflow-y:auto;-webkit-overflow-scrolling:touch;background:var(--ticket);color:var(--ticket-ink);border-radius:20px 20px 0 0;transform:translateY(105%);transition:transform .3s ease;font-family:var(--mono);padding-bottom:calc(14px + var(--safeB))}
 .sheet.on{transform:translateY(0)}
 .sheet-grip{width:44px;height:4px;border-radius:4px;background:#c9bda2;margin:12px auto 4px}
 .tk-close{position:absolute;top:10px;right:10px;font-size:15px;padding:10px 14px;color:#7a7059;font-weight:700}
@@ -171,7 +173,7 @@ footer{padding:34px 16px 26px;text-align:center;border-top:1px solid var(--line)
 .tk-qty .q{min-width:22px;text-align:center;font-weight:700;font-size:13px}
 .tk-line .amt{font-weight:700;min-width:52px;text-align:right}
 .tk-discount{display:flex;justify-content:space-between;padding:9px 0;font-size:12.5px;color:var(--veg);font-weight:700}
-.tk-total{display:flex;justify-content:space-between;padding:13px 0 4px;font-size:17px;font-weight:700;border-top:2px solid var(--ticket-ink);margin-top:6px}
+.tk-total{display:flex;justify-content:space-between;align-items:flex-start;padding:13px 0 4px;font-size:17px;font-weight:700;border-top:2px solid var(--ticket-ink);margin-top:6px}
 .tk-total small{display:block;font-weight:400;font-size:10.5px;color:#7a7059}
 .nudge{background:#fff8e6;border:1.5px dashed var(--clay);border-radius:12px;padding:11px 12px;margin:12px 0;display:flex;align-items:center;gap:10px;font-size:12.5px;line-height:1.4}
 .nudge b{color:var(--clay)}
@@ -199,11 +201,54 @@ footer{padding:34px 16px 26px;text-align:center;border-top:1px solid var(--line)
 .empty{text-align:center;padding:34px 20px;font-size:13px;color:#7a7059}
 .empty .big{font-family:var(--disp);font-size:24px;letter-spacing:2px;color:var(--ticket-ink);margin-bottom:6px}
 
-/* ---------- THANK YOU / POST-ORDER ---------- */
+/* ---------- PAYMENT ---------- */
+.paybox{border-top:2px dashed #b9ac8e;margin-top:16px;padding-top:14px}
+.pay-h{font-family:var(--disp);font-size:19px;letter-spacing:2px;color:var(--ticket-ink);margin-bottom:2px}
+.pay-s{font-size:11px;color:#7a7059;font-weight:700;margin-bottom:10px}
+.paytabs{display:flex;gap:9px;margin-bottom:12px}
+.paytabs button{flex:1;border:1.5px solid var(--ticket-ink);border-radius:11px;padding:11px 8px;background:#fff;font-family:var(--mono);font-weight:700;font-size:12.5px;line-height:1.3;min-height:60px;text-align:center}
+.paytabs button small{display:block;font-weight:400;font-size:10px;color:#7a7059;margin-top:3px}
+.paytabs button.sel{background:var(--ticket-ink);color:var(--ticket)}
+.paytabs button.sel small{color:#c9bda2}
+.upibox{background:#fff;border:1.5px solid #d8cdb2;border-radius:14px;padding:13px}
+.upi-amt{text-align:center;font-family:var(--disp);font-size:34px;letter-spacing:1px;line-height:1;color:var(--ticket-ink)}
+.upi-amt small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.8px;color:#7a7059;font-weight:700;margin-top:4px}
+.upi-apps{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:13px 0 11px}
+.upiapp{display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;color:#fff;font-family:var(--disp);font-size:16px;letter-spacing:1.4px;padding:13px 6px;border-radius:11px;min-height:50px}
+.upiapp.g{background:var(--gpay)}
+.upiapp.p{background:var(--ppe)}
+.upiapp.t{background:var(--ptm)}
+.upiapp.a{background:var(--ticket-ink)}
+.qrwrap{background:#fff;border:2px solid var(--ticket-ink);border-radius:14px;padding:14px 12px 12px;text-align:center;margin-bottom:11px}
+.qrhead{font-family:var(--disp);font-size:15px;letter-spacing:2px;color:var(--ticket-ink);margin-bottom:9px}
+.qrimg{width:200px;height:200px;max-width:74%;image-rendering:pixelated;display:block;margin:0 auto;border:6px solid #fff}
+.qramt{font-family:var(--disp);font-size:20px;letter-spacing:1px;color:var(--ticket-ink);margin-top:9px}
+.qr-how{text-align:left;line-height:1.75}
+.or-line{display:flex;align-items:center;gap:10px;margin:14px 0 11px;color:#8b8168;font-size:10.5px;font-weight:800;letter-spacing:1.2px}
+.or-line::before,.or-line::after{content:"";flex:1;border-top:1.5px dashed #c9bda2}
+.upi-copy{display:flex;align-items:center;gap:8px;background:#f6f0e2;border:1.5px dashed #c9bda2;border-radius:10px;padding:9px 10px;margin-bottom:8px}
+.upi-copy .lbl{flex:1;min-width:0}
+.upi-copy .lbl b{display:block;font-size:9.5px;letter-spacing:1px;color:#8b8168}
+.upi-copy .lbl span{display:block;font-size:12.5px;font-weight:700;color:var(--ticket-ink);word-break:break-all;line-height:1.3}
+.upi-copy button{background:var(--ticket-ink);color:var(--ticket);font-family:var(--disp);font-size:13px;letter-spacing:1.4px;padding:9px 13px;border-radius:8px;flex-shrink:0;min-height:40px}
+.upi-hint{font-size:10.5px;color:#7a7059;font-weight:700;line-height:1.55;margin:8px 0 10px;text-align:center}
+.paidchk{display:flex;align-items:center;gap:10px;background:#eaf7ec;border:2px solid var(--veg);border-radius:11px;padding:13px;cursor:pointer;min-height:54px}
+.paidchk input{width:22px;height:22px;flex-shrink:0;accent-color:var(--veg);margin:0}
+.paidchk span{font-size:13px;font-weight:700;color:#16702f;line-height:1.3}
+.paidchk.done{background:var(--veg)}
+.paidchk.done span{color:#fff}
+.pulse{animation:pulseGlow 1.1s ease-in-out 3}
+@keyframes pulseGlow{0%,100%{box-shadow:0 0 0 0 rgba(30,143,62,0)}50%{box-shadow:0 0 0 7px rgba(30,143,62,.28)}}
+.refwrap{margin-top:9px}
+.repay{background:#fdecea;border:1.5px solid var(--hit);color:#a12920;font-size:11.5px;font-weight:700;border-radius:10px;padding:9px 11px;margin-bottom:10px;line-height:1.45}
+
+/* ---------- THANKS ---------- */
 .thanks{text-align:center;padding:8px 4px 6px}
 .thanks .t-big{font-family:var(--disp);font-size:34px;letter-spacing:2.5px;color:var(--ticket-ink);line-height:1}
 .thanks .t-stars{font-size:18px;letter-spacing:6px;color:var(--clay);margin:8px 0 2px}
 .thanks .t-sub{font-size:12.5px;color:#6b6049;font-weight:700;margin-top:6px;line-height:1.5}
+.t-paid{display:inline-block;background:var(--veg);color:#fff;font-size:11.5px;font-weight:800;letter-spacing:1px;border-radius:999px;padding:6px 14px;margin-top:10px}
+.t-paid.counter{background:var(--clay)}
 .t-divider{display:flex;align-items:center;gap:10px;margin:18px 0 12px;color:#8b8168;font-size:11px;font-weight:700;letter-spacing:1.5px}
 .t-divider::before,.t-divider::after{content:"";flex:1;border-top:1.5px dashed #c9bda2}
 .t-card{background:#fff;border:1.5px solid #d8cdb2;border-radius:14px;padding:14px;margin-bottom:11px;text-align:center}
@@ -274,11 +319,9 @@ footer{padding:34px 16px 26px;text-align:center;border-top:1px solid var(--line)
   <div class="f-review">KAISI LAGI PICTURE? ★★★★★<br>Google pe review chhod do — <b>aur agli baar dosto ko bhi leke aana!</b></div>
 </footer>
 
-<!-- Jump menu -->
 <button class="fab" id="fab" data-act="jump-open">📖 MENU</button>
 <div class="jumper" id="jumper" role="dialog" aria-label="Jump to section"><h4>SEEDHA JUMP KARO ↓</h4><div id="jump-list"></div></div>
 
-<!-- Upsell toast (top — always visible on iPhone & Android) -->
 <div class="trailer" id="trailer" aria-live="polite">
   <span class="tr-tag">SAATH MEIN?</span>
   <div class="tr-txt" id="tr-txt"></div>
@@ -286,7 +329,6 @@ footer{padding:34px 16px 26px;text-align:center;border-top:1px solid var(--line)
   <button class="tr-close" data-act="tr-close" aria-label="Close suggestion">✕</button>
 </div>
 
-<!-- Cart bar -->
 <div class="cartbar" id="cartbar">
   <div class="cb-left"><span id="cb-count"></span><small>Extra masala / adrak — FREE ☕</small></div>
   <button class="cb-btn" data-act="open-cart">VIEW ORDER · ₹<span id="cb-total"></span></button>
@@ -294,18 +336,16 @@ footer{padding:34px 16px 26px;text-align:center;border-top:1px solid var(--line)
 
 <div class="overlay" id="overlay" data-act="overlay"></div>
 
-<!-- Order sheet -->
 <div class="sheet" id="sheet" role="dialog" aria-label="Your order">
   <div class="sheet-grip"></div>
   <button class="tk-close" data-act="close-cart">✕ CLOSE</button>
   <div class="tk-head">
     <div class="tk-title">🎟️ YOUR ORDER</div>
-    <div class="tk-sub">CHAI INTERVAL · SECTOR 126 · SHOW TIME: ABHI</div>
+    <div class="tk-sub" id="tk-sub">CHAI INTERVAL · SECTOR 126 · SHOW TIME: ABHI</div>
   </div>
   <div class="tk-body" id="tk-body"></div>
 </div>
 
-<!-- Variant sheet -->
 <div class="vsheet" id="vsheet" role="dialog" aria-label="Choose size">
   <h3 id="vs-title"></h3>
   <p id="vs-sub">Size / portion chuno</p>
@@ -313,6 +353,10 @@ footer{padding:34px 16px 26px;text-align:center;border-top:1px solid var(--line)
   <button class="vdone" data-act="v-done">DONE</button>
 </div>
 
+<script>
+/* qrcode-generator (c) Kazuhiko Arase -- MIT */
+var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],f={},c=function(t,r){o=function(t){for(var r=new Array(t),e=0;e<t;e+=1){r[e]=new Array(t);for(var n=0;n<t;n+=1)r[e][n]=null}return r}(i=4*e+17),l(0,0),l(i-7,0),l(0,i-7),s(),h(),d(t,r),e>=7&&v(t),null==a&&(a=p(e,n,u)),w(a,r)},l=function(t,r){for(var e=-1;e<=7;e+=1)if(!(t+e<=-1||i<=t+e))for(var n=-1;n<=7;n+=1)r+n<=-1||i<=r+n||(o[t+e][r+n]=0<=e&&e<=6&&(0==n||6==n)||0<=n&&n<=6&&(0==e||6==e)||2<=e&&e<=4&&2<=n&&n<=4)},h=function(){for(var t=8;t<i-8;t+=1)null==o[t][6]&&(o[t][6]=t%2==0);for(var r=8;r<i-8;r+=1)null==o[6][r]&&(o[6][r]=r%2==0)},s=function(){for(var t=B.getPatternPosition(e),r=0;r<t.length;r+=1)for(var n=0;n<t.length;n+=1){var i=t[r],a=t[n];if(null==o[i][a])for(var u=-2;u<=2;u+=1)for(var f=-2;f<=2;f+=1)o[i+u][a+f]=-2==u||2==u||-2==f||2==f||0==u&&0==f}},v=function(t){for(var r=B.getBCHTypeNumber(e),n=0;n<18;n+=1){var a=!t&&1==(r>>n&1);o[Math.floor(n/3)][n%3+i-8-3]=a}for(n=0;n<18;n+=1){a=!t&&1==(r>>n&1);o[n%3+i-8-3][Math.floor(n/3)]=a}},d=function(t,r){for(var e=n<<3|r,a=B.getBCHTypeInfo(e),u=0;u<15;u+=1){var f=!t&&1==(a>>u&1);u<6?o[u][8]=f:u<8?o[u+1][8]=f:o[i-15+u][8]=f}for(u=0;u<15;u+=1){f=!t&&1==(a>>u&1);u<8?o[8][i-u-1]=f:u<9?o[8][15-u-1+1]=f:o[8][15-u-1]=f}o[i-8][8]=!t},w=function(t,r){for(var e=-1,n=i-1,a=7,u=0,f=B.getMaskFunction(r),c=i-1;c>0;c-=2)for(6==c&&(c-=1);;){for(var g=0;g<2;g+=1)if(null==o[n][c-g]){var l=!1;u<t.length&&(l=1==(t[u]>>>a&1)),f(n,c-g)&&(l=!l),o[n][c-g]=l,-1==(a-=1)&&(u+=1,a=7)}if((n+=e)<0||i<=n){n-=e,e=-e;break}}},p=function(t,r,e){for(var n=A.getRSBlocks(t,r),o=b(),i=0;i<e.length;i+=1){var a=e[i];o.put(a.getMode(),4),o.put(a.getLength(),B.getLengthInBits(a.getMode(),t)),a.write(o)}var u=0;for(i=0;i<n.length;i+=1)u+=n[i].dataCount;if(o.getLengthInBits()>8*u)throw"code length overflow. ("+o.getLengthInBits()+">"+8*u+")";for(o.getLengthInBits()+4<=8*u&&o.put(0,4);o.getLengthInBits()%8!=0;)o.putBit(!1);for(;!(o.getLengthInBits()>=8*u||(o.put(236,8),o.getLengthInBits()>=8*u));)o.put(17,8);return function(t,r){for(var e=0,n=0,o=0,i=new Array(r.length),a=new Array(r.length),u=0;u<r.length;u+=1){var f=r[u].dataCount,c=r[u].totalCount-f;n=Math.max(n,f),o=Math.max(o,c),i[u]=new Array(f);for(var g=0;g<i[u].length;g+=1)i[u][g]=255&t.getBuffer()[g+e];e+=f;var l=B.getErrorCorrectPolynomial(c),h=k(i[u],l.getLength()-1).mod(l);for(a[u]=new Array(l.getLength()-1),g=0;g<a[u].length;g+=1){var s=g+h.getLength()-a[u].length;a[u][g]=s>=0?h.getAt(s):0}}var v=0;for(g=0;g<r.length;g+=1)v+=r[g].totalCount;var d=new Array(v),w=0;for(g=0;g<n;g+=1)for(u=0;u<r.length;u+=1)g<i[u].length&&(d[w]=i[u][g],w+=1);for(g=0;g<o;g+=1)for(u=0;u<r.length;u+=1)g<a[u].length&&(d[w]=a[u][g],w+=1);return d}(o,n)};f.addData=function(t,r){var e=null;switch(r=r||"Byte"){case"Numeric":e=M(t);break;case"Alphanumeric":e=x(t);break;case"Byte":e=m(t);break;case"Kanji":e=L(t);break;default:throw"mode:"+r}u.push(e),a=null},f.isDark=function(t,r){if(t<0||i<=t||r<0||i<=r)throw t+","+r;return o[t][r]},f.getModuleCount=function(){return i},f.make=function(){if(e<1){for(var t=1;t<40;t++){for(var r=A.getRSBlocks(t,n),o=b(),i=0;i<u.length;i++){var a=u[i];o.put(a.getMode(),4),o.put(a.getLength(),B.getLengthInBits(a.getMode(),t)),a.write(o)}var g=0;for(i=0;i<r.length;i++)g+=r[i].dataCount;if(o.getLengthInBits()<=8*g)break}e=t}c(!1,function(){for(var t=0,r=0,e=0;e<8;e+=1){c(!0,e);var n=B.getLostPoint(f);(0==e||t>n)&&(t=n,r=e)}return r}())},f.createTableTag=function(t,r){t=t||2;var e="";e+='<table style="',e+=" border-width: 0px; border-style: none;",e+=" border-collapse: collapse;",e+=" padding: 0px; margin: "+(r=void 0===r?4*t:r)+"px;",e+='">',e+="<tbody>";for(var n=0;n<f.getModuleCount();n+=1){e+="<tr>";for(var o=0;o<f.getModuleCount();o+=1)e+='<td style="',e+=" border-width: 0px; border-style: none;",e+=" border-collapse: collapse;",e+=" padding: 0px; margin: 0px;",e+=" width: "+t+"px;",e+=" height: "+t+"px;",e+=" background-color: ",e+=f.isDark(n,o)?"#000000":"#ffffff",e+=";",e+='"/>';e+="</tr>"}return e+="</tbody>",e+="</table>"},f.createSvgTag=function(t,r,e,n){var o={};"object"==typeof arguments[0]&&(t=(o=arguments[0]).cellSize,r=o.margin,e=o.alt,n=o.title),t=t||2,r=void 0===r?4*t:r,(e="string"==typeof e?{text:e}:e||{}).text=e.text||null,e.id=e.text?e.id||"qrcode-description":null,(n="string"==typeof n?{text:n}:n||{}).text=n.text||null,n.id=n.text?n.id||"qrcode-title":null;var i,a,u,c,g=f.getModuleCount()*t+2*r,l="";for(c="l"+t+",0 0,"+t+" -"+t+",0 0,-"+t+"z ",l+='<svg version="1.1" xmlns="http://www.w3.org/2000/svg"',l+=o.scalable?"":' width="'+g+'px" height="'+g+'px"',l+=' viewBox="0 0 '+g+" "+g+'" ',l+=' preserveAspectRatio="xMinYMin meet"',l+=n.text||e.text?' role="img" aria-labelledby="'+y([n.id,e.id].join(" ").trim())+'"':"",l+=">",l+=n.text?'<title id="'+y(n.id)+'">'+y(n.text)+"</title>":"",l+=e.text?'<description id="'+y(e.id)+'">'+y(e.text)+"</description>":"",l+='<rect width="100%" height="100%" fill="white" cx="0" cy="0"/>',l+='<path d="',a=0;a<f.getModuleCount();a+=1)for(u=a*t+r,i=0;i<f.getModuleCount();i+=1)f.isDark(a,i)&&(l+="M"+(i*t+r)+","+u+c);return l+='" stroke="transparent" fill="black"/>',l+="</svg>"},f.createDataURL=function(t,r){t=t||2,r=void 0===r?4*t:r;var e=f.getModuleCount()*t+2*r,n=r,o=e-r;return I(e,e,function(r,e){if(n<=r&&r<o&&n<=e&&e<o){var i=Math.floor((r-n)/t),a=Math.floor((e-n)/t);return f.isDark(a,i)?0:1}return 1})},f.createImgTag=function(t,r,e){t=t||2,r=void 0===r?4*t:r;var n=f.getModuleCount()*t+2*r,o="";return o+="<img",o+=' src="',o+=f.createDataURL(t,r),o+='"',o+=' width="',o+=n,o+='"',o+=' height="',o+=n,o+='"',e&&(o+=' alt="',o+=y(e),o+='"'),o+="/>"};var y=function(t){for(var r="",e=0;e<t.length;e+=1){var n=t.charAt(e);switch(n){case"<":r+="&lt;";break;case">":r+="&gt;";break;case"&":r+="&amp;";break;case'"':r+="&quot;";break;default:r+=n}}return r};return f.createASCII=function(t,r){if((t=t||1)<2)return function(t){t=void 0===t?2:t;var r,e,n,o,i,a=1*f.getModuleCount()+2*t,u=t,c=a-t,g={"██":"█","█ ":"▀"," █":"▄","  ":" "},l={"██":"▀","█ ":"▀"," █":" ","  ":" "},h="";for(r=0;r<a;r+=2){for(n=Math.floor((r-u)/1),o=Math.floor((r+1-u)/1),e=0;e<a;e+=1)i="█",u<=e&&e<c&&u<=r&&r<c&&f.isDark(n,Math.floor((e-u)/1))&&(i=" "),u<=e&&e<c&&u<=r+1&&r+1<c&&f.isDark(o,Math.floor((e-u)/1))?i+=" ":i+="█",h+=t<1&&r+1>=c?l[i]:g[i];h+="\n"}return a%2&&t>0?h.substring(0,h.length-a-1)+Array(a+1).join("▀"):h.substring(0,h.length-1)}(r);t-=1,r=void 0===r?2*t:r;var e,n,o,i,a=f.getModuleCount()*t+2*r,u=r,c=a-r,g=Array(t+1).join("██"),l=Array(t+1).join("  "),h="",s="";for(e=0;e<a;e+=1){for(o=Math.floor((e-u)/t),s="",n=0;n<a;n+=1)i=1,u<=n&&n<c&&u<=e&&e<c&&f.isDark(o,Math.floor((n-u)/t))&&(i=0),s+=i?g:l;for(o=0;o<t;o+=1)h+=s+"\n"}return h.substring(0,h.length-1)},f.renderTo2dContext=function(t,r){r=r||2;for(var e=f.getModuleCount(),n=0;n<e;n++)for(var o=0;o<e;o++)t.fillStyle=f.isDark(n,o)?"black":"white",t.fillRect(o*r,n*r,r,r)},f};t.stringToBytes=(t.stringToBytesFuncs={default:function(t){for(var r=[],e=0;e<t.length;e+=1){var n=t.charCodeAt(e);r.push(255&n)}return r}}).default,t.createStringToBytes=function(t,r){var e=function(){for(var e=S(t),n=function(){var t=e.read();if(-1==t)throw"eof";return t},o=0,i={};;){var a=e.read();if(-1==a)break;var u=n(),f=n()<<8|n();i[String.fromCharCode(a<<8|u)]=f,o+=1}if(o!=r)throw o+" != "+r;return i}(),n="?".charCodeAt(0);return function(t){for(var r=[],o=0;o<t.length;o+=1){var i=t.charCodeAt(o);if(i<128)r.push(i);else{var a=e[t.charAt(o)];"number"==typeof a?(255&a)==a?r.push(a):(r.push(a>>>8),r.push(255&a)):r.push(n)}}return r}};var r,e,n,o,i,a=1,u=2,f=4,c=8,g={L:1,M:0,Q:3,H:2},l=0,h=1,s=2,v=3,d=4,w=5,p=6,y=7,B=(r=[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],e=1335,n=7973,i=function(t){for(var r=0;0!=t;)r+=1,t>>>=1;return r},(o={}).getBCHTypeInfo=function(t){for(var r=t<<10;i(r)-i(e)>=0;)r^=e<<i(r)-i(e);return 21522^(t<<10|r)},o.getBCHTypeNumber=function(t){for(var r=t<<12;i(r)-i(n)>=0;)r^=n<<i(r)-i(n);return t<<12|r},o.getPatternPosition=function(t){return r[t-1]},o.getMaskFunction=function(t){switch(t){case l:return function(t,r){return(t+r)%2==0};case h:return function(t,r){return t%2==0};case s:return function(t,r){return r%3==0};case v:return function(t,r){return(t+r)%3==0};case d:return function(t,r){return(Math.floor(t/2)+Math.floor(r/3))%2==0};case w:return function(t,r){return t*r%2+t*r%3==0};case p:return function(t,r){return(t*r%2+t*r%3)%2==0};case y:return function(t,r){return(t*r%3+(t+r)%2)%2==0};default:throw"bad maskPattern:"+t}},o.getErrorCorrectPolynomial=function(t){for(var r=k([1],0),e=0;e<t;e+=1)r=r.multiply(k([1,C.gexp(e)],0));return r},o.getLengthInBits=function(t,r){if(1<=r&&r<10)switch(t){case a:return 10;case u:return 9;case f:case c:return 8;default:throw"mode:"+t}else if(r<27)switch(t){case a:return 12;case u:return 11;case f:return 16;case c:return 10;default:throw"mode:"+t}else{if(!(r<41))throw"type:"+r;switch(t){case a:return 14;case u:return 13;case f:return 16;case c:return 12;default:throw"mode:"+t}}},o.getLostPoint=function(t){for(var r=t.getModuleCount(),e=0,n=0;n<r;n+=1)for(var o=0;o<r;o+=1){for(var i=0,a=t.isDark(n,o),u=-1;u<=1;u+=1)if(!(n+u<0||r<=n+u))for(var f=-1;f<=1;f+=1)o+f<0||r<=o+f||0==u&&0==f||a==t.isDark(n+u,o+f)&&(i+=1);i>5&&(e+=3+i-5)}for(n=0;n<r-1;n+=1)for(o=0;o<r-1;o+=1){var c=0;t.isDark(n,o)&&(c+=1),t.isDark(n+1,o)&&(c+=1),t.isDark(n,o+1)&&(c+=1),t.isDark(n+1,o+1)&&(c+=1),0!=c&&4!=c||(e+=3)}for(n=0;n<r;n+=1)for(o=0;o<r-6;o+=1)t.isDark(n,o)&&!t.isDark(n,o+1)&&t.isDark(n,o+2)&&t.isDark(n,o+3)&&t.isDark(n,o+4)&&!t.isDark(n,o+5)&&t.isDark(n,o+6)&&(e+=40);for(o=0;o<r;o+=1)for(n=0;n<r-6;n+=1)t.isDark(n,o)&&!t.isDark(n+1,o)&&t.isDark(n+2,o)&&t.isDark(n+3,o)&&t.isDark(n+4,o)&&!t.isDark(n+5,o)&&t.isDark(n+6,o)&&(e+=40);var g=0;for(o=0;o<r;o+=1)for(n=0;n<r;n+=1)t.isDark(n,o)&&(g+=1);return e+=Math.abs(100*g/r/r-50)/5*10},o),C=function(){for(var t=new Array(256),r=new Array(256),e=0;e<8;e+=1)t[e]=1<<e;for(e=8;e<256;e+=1)t[e]=t[e-4]^t[e-5]^t[e-6]^t[e-8];for(e=0;e<255;e+=1)r[t[e]]=e;var n={glog:function(t){if(t<1)throw"glog("+t+")";return r[t]},gexp:function(r){for(;r<0;)r+=255;for(;r>=256;)r-=255;return t[r]}};return n}();function k(t,r){if(void 0===t.length)throw t.length+"/"+r;var e=function(){for(var e=0;e<t.length&&0==t[e];)e+=1;for(var n=new Array(t.length-e+r),o=0;o<t.length-e;o+=1)n[o]=t[o+e];return n}(),n={getAt:function(t){return e[t]},getLength:function(){return e.length},multiply:function(t){for(var r=new Array(n.getLength()+t.getLength()-1),e=0;e<n.getLength();e+=1)for(var o=0;o<t.getLength();o+=1)r[e+o]^=C.gexp(C.glog(n.getAt(e))+C.glog(t.getAt(o)));return k(r,0)},mod:function(t){if(n.getLength()-t.getLength()<0)return n;for(var r=C.glog(n.getAt(0))-C.glog(t.getAt(0)),e=new Array(n.getLength()),o=0;o<n.getLength();o+=1)e[o]=n.getAt(o);for(o=0;o<t.getLength();o+=1)e[o]^=C.gexp(C.glog(t.getAt(o))+r);return k(e,0).mod(t)}};return n}var A=function(){var t=[[1,26,19],[1,26,16],[1,26,13],[1,26,9],[1,44,34],[1,44,28],[1,44,22],[1,44,16],[1,70,55],[1,70,44],[2,35,17],[2,35,13],[1,100,80],[2,50,32],[2,50,24],[4,25,9],[1,134,108],[2,67,43],[2,33,15,2,34,16],[2,33,11,2,34,12],[2,86,68],[4,43,27],[4,43,19],[4,43,15],[2,98,78],[4,49,31],[2,32,14,4,33,15],[4,39,13,1,40,14],[2,121,97],[2,60,38,2,61,39],[4,40,18,2,41,19],[4,40,14,2,41,15],[2,146,116],[3,58,36,2,59,37],[4,36,16,4,37,17],[4,36,12,4,37,13],[2,86,68,2,87,69],[4,69,43,1,70,44],[6,43,19,2,44,20],[6,43,15,2,44,16],[4,101,81],[1,80,50,4,81,51],[4,50,22,4,51,23],[3,36,12,8,37,13],[2,116,92,2,117,93],[6,58,36,2,59,37],[4,46,20,6,47,21],[7,42,14,4,43,15],[4,133,107],[8,59,37,1,60,38],[8,44,20,4,45,21],[12,33,11,4,34,12],[3,145,115,1,146,116],[4,64,40,5,65,41],[11,36,16,5,37,17],[11,36,12,5,37,13],[5,109,87,1,110,88],[5,65,41,5,66,42],[5,54,24,7,55,25],[11,36,12,7,37,13],[5,122,98,1,123,99],[7,73,45,3,74,46],[15,43,19,2,44,20],[3,45,15,13,46,16],[1,135,107,5,136,108],[10,74,46,1,75,47],[1,50,22,15,51,23],[2,42,14,17,43,15],[5,150,120,1,151,121],[9,69,43,4,70,44],[17,50,22,1,51,23],[2,42,14,19,43,15],[3,141,113,4,142,114],[3,70,44,11,71,45],[17,47,21,4,48,22],[9,39,13,16,40,14],[3,135,107,5,136,108],[3,67,41,13,68,42],[15,54,24,5,55,25],[15,43,15,10,44,16],[4,144,116,4,145,117],[17,68,42],[17,50,22,6,51,23],[19,46,16,6,47,17],[2,139,111,7,140,112],[17,74,46],[7,54,24,16,55,25],[34,37,13],[4,151,121,5,152,122],[4,75,47,14,76,48],[11,54,24,14,55,25],[16,45,15,14,46,16],[6,147,117,4,148,118],[6,73,45,14,74,46],[11,54,24,16,55,25],[30,46,16,2,47,17],[8,132,106,4,133,107],[8,75,47,13,76,48],[7,54,24,22,55,25],[22,45,15,13,46,16],[10,142,114,2,143,115],[19,74,46,4,75,47],[28,50,22,6,51,23],[33,46,16,4,47,17],[8,152,122,4,153,123],[22,73,45,3,74,46],[8,53,23,26,54,24],[12,45,15,28,46,16],[3,147,117,10,148,118],[3,73,45,23,74,46],[4,54,24,31,55,25],[11,45,15,31,46,16],[7,146,116,7,147,117],[21,73,45,7,74,46],[1,53,23,37,54,24],[19,45,15,26,46,16],[5,145,115,10,146,116],[19,75,47,10,76,48],[15,54,24,25,55,25],[23,45,15,25,46,16],[13,145,115,3,146,116],[2,74,46,29,75,47],[42,54,24,1,55,25],[23,45,15,28,46,16],[17,145,115],[10,74,46,23,75,47],[10,54,24,35,55,25],[19,45,15,35,46,16],[17,145,115,1,146,116],[14,74,46,21,75,47],[29,54,24,19,55,25],[11,45,15,46,46,16],[13,145,115,6,146,116],[14,74,46,23,75,47],[44,54,24,7,55,25],[59,46,16,1,47,17],[12,151,121,7,152,122],[12,75,47,26,76,48],[39,54,24,14,55,25],[22,45,15,41,46,16],[6,151,121,14,152,122],[6,75,47,34,76,48],[46,54,24,10,55,25],[2,45,15,64,46,16],[17,152,122,4,153,123],[29,74,46,14,75,47],[49,54,24,10,55,25],[24,45,15,46,46,16],[4,152,122,18,153,123],[13,74,46,32,75,47],[48,54,24,14,55,25],[42,45,15,32,46,16],[20,147,117,4,148,118],[40,75,47,7,76,48],[43,54,24,22,55,25],[10,45,15,67,46,16],[19,148,118,6,149,119],[18,75,47,31,76,48],[34,54,24,34,55,25],[20,45,15,61,46,16]],r=function(t,r){var e={};return e.totalCount=t,e.dataCount=r,e},e={};return e.getRSBlocks=function(e,n){var o=function(r,e){switch(e){case g.L:return t[4*(r-1)+0];case g.M:return t[4*(r-1)+1];case g.Q:return t[4*(r-1)+2];case g.H:return t[4*(r-1)+3];default:return}}(e,n);if(void 0===o)throw"bad rs block @ typeNumber:"+e+"/errorCorrectionLevel:"+n;for(var i=o.length/3,a=[],u=0;u<i;u+=1)for(var f=o[3*u+0],c=o[3*u+1],l=o[3*u+2],h=0;h<f;h+=1)a.push(r(c,l));return a},e}(),b=function(){var t=[],r=0,e={getBuffer:function(){return t},getAt:function(r){var e=Math.floor(r/8);return 1==(t[e]>>>7-r%8&1)},put:function(t,r){for(var n=0;n<r;n+=1)e.putBit(1==(t>>>r-n-1&1))},getLengthInBits:function(){return r},putBit:function(e){var n=Math.floor(r/8);t.length<=n&&t.push(0),e&&(t[n]|=128>>>r%8),r+=1}};return e},M=function(t){var r=a,e=t,n={getMode:function(){return r},getLength:function(t){return e.length},write:function(t){for(var r=e,n=0;n+2<r.length;)t.put(o(r.substring(n,n+3)),10),n+=3;n<r.length&&(r.length-n==1?t.put(o(r.substring(n,n+1)),4):r.length-n==2&&t.put(o(r.substring(n,n+2)),7))}},o=function(t){for(var r=0,e=0;e<t.length;e+=1)r=10*r+i(t.charAt(e));return r},i=function(t){if("0"<=t&&t<="9")return t.charCodeAt(0)-"0".charCodeAt(0);throw"illegal char :"+t};return n},x=function(t){var r=u,e=t,n={getMode:function(){return r},getLength:function(t){return e.length},write:function(t){for(var r=e,n=0;n+1<r.length;)t.put(45*o(r.charAt(n))+o(r.charAt(n+1)),11),n+=2;n<r.length&&t.put(o(r.charAt(n)),6)}},o=function(t){if("0"<=t&&t<="9")return t.charCodeAt(0)-"0".charCodeAt(0);if("A"<=t&&t<="Z")return t.charCodeAt(0)-"A".charCodeAt(0)+10;switch(t){case" ":return 36;case"$":return 37;case"%":return 38;case"*":return 39;case"+":return 40;case"-":return 41;case".":return 42;case"/":return 43;case":":return 44;default:throw"illegal char :"+t}};return n},m=function(r){var e=f,n=t.stringToBytes(r),o={getMode:function(){return e},getLength:function(t){return n.length},write:function(t){for(var r=0;r<n.length;r+=1)t.put(n[r],8)}};return o},L=function(r){var e=c,n=t.stringToBytesFuncs.SJIS;if(!n)throw"sjis not supported.";!function(){var t=n("友");if(2!=t.length||38726!=(t[0]<<8|t[1]))throw"sjis not supported."}();var o=n(r),i={getMode:function(){return e},getLength:function(t){return~~(o.length/2)},write:function(t){for(var r=o,e=0;e+1<r.length;){var n=(255&r[e])<<8|255&r[e+1];if(33088<=n&&n<=40956)n-=33088;else{if(!(57408<=n&&n<=60351))throw"illegal char at "+(e+1)+"/"+n;n-=49472}n=192*(n>>>8&255)+(255&n),t.put(n,13),e+=2}if(e<r.length)throw"illegal char at "+(e+1)}};return i},D=function(){var t=[],r={writeByte:function(r){t.push(255&r)},writeShort:function(t){r.writeByte(t),r.writeByte(t>>>8)},writeBytes:function(t,e,n){e=e||0,n=n||t.length;for(var o=0;o<n;o+=1)r.writeByte(t[o+e])},writeString:function(t){for(var e=0;e<t.length;e+=1)r.writeByte(t.charCodeAt(e))},toByteArray:function(){return t},toString:function(){var r="";r+="[";for(var e=0;e<t.length;e+=1)e>0&&(r+=","),r+=t[e];return r+="]"}};return r},S=function(t){var r=t,e=0,n=0,o=0,i={read:function(){for(;o<8;){if(e>=r.length){if(0==o)return-1;throw"unexpected end of file./"+o}var t=r.charAt(e);if(e+=1,"="==t)return o=0,-1;t.match(/^\s$/)||(n=n<<6|a(t.charCodeAt(0)),o+=6)}var i=n>>>o-8&255;return o-=8,i}},a=function(t){if(65<=t&&t<=90)return t-65;if(97<=t&&t<=122)return t-97+26;if(48<=t&&t<=57)return t-48+52;if(43==t)return 62;if(47==t)return 63;throw"c:"+t};return i},I=function(t,r,e){for(var n=function(t,r){var e=t,n=r,o=new Array(t*r),i={setPixel:function(t,r,n){o[r*e+t]=n},write:function(t){t.writeString("GIF87a"),t.writeShort(e),t.writeShort(n),t.writeByte(128),t.writeByte(0),t.writeByte(0),t.writeByte(0),t.writeByte(0),t.writeByte(0),t.writeByte(255),t.writeByte(255),t.writeByte(255),t.writeString(","),t.writeShort(0),t.writeShort(0),t.writeShort(e),t.writeShort(n),t.writeByte(0);var r=a(2);t.writeByte(2);for(var o=0;r.length-o>255;)t.writeByte(255),t.writeBytes(r,o,255),o+=255;t.writeByte(r.length-o),t.writeBytes(r,o,r.length-o),t.writeByte(0),t.writeString(";")}},a=function(t){for(var r=1<<t,e=1+(1<<t),n=t+1,i=u(),a=0;a<r;a+=1)i.add(String.fromCharCode(a));i.add(String.fromCharCode(r)),i.add(String.fromCharCode(e));var f,c,g,l=D(),h=(f=l,c=0,g=0,{write:function(t,r){if(t>>>r!=0)throw"length over";for(;c+r>=8;)f.writeByte(255&(t<<c|g)),r-=8-c,t>>>=8-c,g=0,c=0;g|=t<<c,c+=r},flush:function(){c>0&&f.writeByte(g)}});h.write(r,n);var s=0,v=String.fromCharCode(o[s]);for(s+=1;s<o.length;){var d=String.fromCharCode(o[s]);s+=1,i.contains(v+d)?v+=d:(h.write(i.indexOf(v),n),i.size()<4095&&(i.size()==1<<n&&(n+=1),i.add(v+d)),v=d)}return h.write(i.indexOf(v),n),h.write(e,n),h.flush(),l.toByteArray()},u=function(){var t={},r=0,e={add:function(n){if(e.contains(n))throw"dup key:"+n;t[n]=r,r+=1},size:function(){return r},indexOf:function(r){return t[r]},contains:function(r){return void 0!==t[r]}};return e};return i}(t,r),o=0;o<r;o+=1)for(var i=0;i<t;i+=1)n.setPixel(i,o,e(i,o));var a=D();n.write(a);for(var u=function(){var t=0,r=0,e=0,n="",o={},i=function(t){n+=String.fromCharCode(a(63&t))},a=function(t){if(t<0);else{if(t<26)return 65+t;if(t<52)return t-26+97;if(t<62)return t-52+48;if(62==t)return 43;if(63==t)return 47}throw"n:"+t};return o.writeByte=function(n){for(t=t<<8|255&n,r+=8,e+=1;r>=6;)i(t>>>r-6),r-=6},o.flush=function(){if(r>0&&(i(t<<6-r),t=0,r=0),e%3!=0)for(var o=3-e%3,a=0;a<o;a+=1)n+="="},o.toString=function(){return n},o}(),f=a.toByteArray(),c=0;c<f.length;c+=1)u.writeByte(f[c]);return u.flush(),"data:image/gif;base64,"+u};return t}();qrcode.stringToBytesFuncs["UTF-8"]=function(t){return function(t){for(var r=[],e=0;e<t.length;e++){var n=t.charCodeAt(e);n<128?r.push(n):n<2048?r.push(192|n>>6,128|63&n):n<55296||n>=57344?r.push(224|n>>12,128|n>>6&63,128|63&n):(e++,n=65536+((1023&n)<<10|1023&t.charCodeAt(e)),r.push(240|n>>18,128|n>>12&63,128|n>>6&63,128|63&n))}return r}(t)},function(t){"function"==typeof define&&define.amd?define([],t):"object"==typeof exports&&(module.exports=t())}(function(){return qrcode});
+</script>
 <script>
 "use strict";
 /* ============ CONFIG — edit only these lines ============ */
@@ -322,13 +366,20 @@ var CONFIG = {
   address: "Amity University Gate 2, Sector 126, Noida",
   reviewUrl: "https://share.google/vrUZSTlRC3QkrOcdS",
   instaUrl: "https://www.instagram.com/chaiinterval?igsh=ejR1MWtwa25zcHU1",
-  instaHandle: "@chaiinterval"
+  instaHandle: "@chaiinterval",
+
+  /* --- PAYMENT --- */
+  // QR isi merchant se banta hai (working PhonePe QR + amount). PhonePe pe "received" voice alert.
+  qrVpa: "Q840392627@ybl",
+  qrExtra: "mc=0000&mode=02&purpose=00",
+  payeeName: "Chai Interval",
+  upiIdBackup: "rnkumari2016-2@okhdfcbank",
+  gpayNumber: "8178922055"
 };
 /* ======================================================== */
 
-/* ---------------- MENU DATA — validated against LED boards (Jul 2026) ---------------- */
+/* ---------------- MENU DATA — validated against LED boards ---------------- */
 var MENU = [
-/* ================= FOOD ================= */
 {id:"combos",tab:"food",chip:"Interval Combos",name:"INTERVAL COMBOS",note:"PURA PAISA VASOOL",items:[
  {n:"Aloo Tikki Burger Combo",p:165,d:"Burger + Fries + Coke"},
  {n:"Couple Show",p:240,d:"2 Cold Coffee + 1 Fries"},
@@ -456,7 +507,6 @@ var MENU = [
  {n:"Pink Sauce Pasta",p:175},
  {n:"Mix Sauce Pasta",p:175},
 ]},
-/* ================= DRINKS & DESSERTS ================= */
 {id:"kulhad",tab:"drinks",chip:"Kulhad Chai",name:"KULHAD CHAI",note:"KULHAD MEIN ASLI INTERVAL · ₹29 SE SHURU",free:true,items:[
  {n:"Masala Chai",p:29,badge:"HIT"},
  {n:"Adrak Chai",p:29},
@@ -553,7 +603,6 @@ var MENU = [
 var DRINK_CATS = {kulhad:1,chaicombos:1,coffee:1,ice:1,budget:1,green:1,lassi:1,shakes:1,vip:1,fizz:1,gourmet:1};
 var FOOD_CATS  = {combos:1,thali:1,ghar:1,maggi:1,morning:1,rolls:1,protein:1,pizza:1,burger:1,snacks:1,sandwich:1,fries:1,jumbo:1,starters:1,momos:1,noodles:1,rice:1,pasta:1};
 
-/* Pairing brain — cat -> suggestion (prices validated) */
 var UPSELL = {
  kulhad:  {n:"Vada Pav",p:49,cat:"snacks",msg:"Chai ke saath <b>Vada Pav</b> — superhit jodi 🎬"},
  coffee:  {n:"Bun Maska",p:45,cat:"snacks",msg:"Coffee ke saath <b>Bun Maska</b>?"},
@@ -583,7 +632,6 @@ var UPSELL = {
  snacks:  {n:"Masala Chai",p:29,cat:"kulhad",msg:"Snack ke saath <b>kulhad chai</b> — ₹29 hi toh hai"},
 };
 
-/* Combo-swap brain: items in cart -> cheaper official combo */
 var OVERLOADS = {"Oreo Overload":1,"KitKat Crunch":1,"Chocolate Overload":1};
 var SWAPS = [
  {need:[{n:"Vada Pav"},{cat:"kulhad",maxP:29}], combo:{n:"Vada Pav + Chai",cat:"chaicombos",p:69}},
@@ -606,13 +654,19 @@ var ADDONS = [
 var cart = [];
 var activeTab = "food";
 var orderType = "dinein";
-var order = {name:"",table:"",note:""};
+var payMode = "upi";                 /* upi | counter */
+var order = {name:"",table:"",note:"",paid:false,ref:""};
 var upsellShown = {};
 var pendingUpsell = null;
 var trailerTimer = null;
 var vsCat = null, vsIdx = null;
 var orderSent = false;
 var searching = false;
+var upiOpened = false;
+var paidReset = false;
+var orderId = makeOrderId();
+
+function makeOrderId(){return "CI"+Math.floor(1000+Math.random()*9000)}
 
 /* ---------------- HELPERS ---------------- */
 function $(id){return document.getElementById(id)}
@@ -637,6 +691,25 @@ function badgeHTML(b){
   return '<span class="it-badge '+m[0]+'">'+m[1]+'</span>';
 }
 
+/* ---------------- UPI QR ---------------- */
+function makeUpiString(){
+  var amt = cartTotal().toFixed(2);
+  return "upi://pay?pa="+CONFIG.qrVpa
+       + "&pn="+encodeURIComponent(CONFIG.payeeName)
+       + "&"+CONFIG.qrExtra
+       + "&am="+amt
+       + "&cu=INR"
+       + "&tn="+encodeURIComponent("Chai Interval "+orderId);
+}
+function makeQrDataUri(text){
+  try{
+    var qr=qrcode(0,"M");
+    qr.addData(text);
+    qr.make();
+    return qr.createDataURL(7,14);
+  }catch(e){return ""}
+}
+
 /* ---------------- BUILD MENU ---------------- */
 function buildMenu(){
   var pages={food:"",drinks:""};
@@ -647,13 +720,9 @@ function buildMenu(){
     if(cat.free)h+='<div class="freebies"><span class="freebie"><b>FREE</b> extra masala / adrak</span><span class="freebie">Sugar: regular · kam · zero</span><span class="freebie">Full / toned milk — choice aapki</span><span class="freebie">Brown sugar / honey bhi</span></div>';
     cat.items.forEach(function(it,idx){
       var price;
-      if(it.v){
-        price='₹'+it.v[0].p+' <small>/ ₹'+it.v[1].p+' · '+it.v[0].l+' / '+it.v[1].l+'</small>';
-      }else if(it.was){
-        price='<s>₹'+it.was+'</s>₹'+it.p;
-      }else{
-        price='₹'+it.p;
-      }
+      if(it.v){price='₹'+it.v[0].p+' <small>/ ₹'+it.v[1].p+' · '+it.v[0].l+' / '+it.v[1].l+'</small>'}
+      else if(it.was){price='<s>₹'+it.was+'</s>₹'+it.p}
+      else{price='₹'+it.p}
       var saveB = it.was ? '<span class="it-badge b-save">BACHAT ₹'+(it.was-it.p)+'</span>' : '';
       h+='<div class="item" data-name="'+escA(it.n.toLowerCase())+'">'
         +'<div class="it-info"><div class="nameline"><span class="vegdot" aria-label="veg"></span><span class="it-name">'+escA(it.n)+'</span>'+badgeHTML(it.badge)+saveB+'</div>'
@@ -690,35 +759,38 @@ function refreshCtls(){
 }
 function buildChips(){
   var h="";
-  MENU.forEach(function(cat){
-    if(cat.tab!==activeTab)return;
-    h+='<button class="chip" data-act="jump" data-sec="sec-'+cat.id+'">'+cat.chip+'</button>';
-  });
+  MENU.forEach(function(cat){if(cat.tab!==activeTab)return;
+    h+='<button class="chip" data-act="jump" data-sec="sec-'+cat.id+'">'+cat.chip+'</button>';});
   $("chips").innerHTML=h;
 }
 function buildJump(){
   var h="";
-  MENU.forEach(function(cat){
-    if(cat.tab!==activeTab)return;
-    h+='<button class="jump-item" data-act="jump" data-sec="sec-'+cat.id+'">'+cat.name+'<small>'+cat.items.length+' items</small></button>';
-  });
+  MENU.forEach(function(cat){if(cat.tab!==activeTab)return;
+    h+='<button class="jump-item" data-act="jump" data-sec="sec-'+cat.id+'">'+cat.name+'<small>'+cat.items.length+' items</small></button>';});
   $("jump-list").innerHTML=h;
 }
 
-/* ---------------- CART OPS ---------------- */
+/* ---------------- CART ---------------- */
+function cartChanged(){
+  /* agar pehle "paid" tick tha aur ab order badla — reset, warna galat amount ka claim ho jayega */
+  if(order.paid){order.paid=false;paidReset=true}
+  orderSent=false;
+  upiOpened=false;
+}
 function addToCart(catId,n,l,p){
   var k=keyOf(n,l),ex=inCart(k);
   if(ex)ex.qty++;else cart.push({key:k,n:n,l:l,p:p,qty:1,cat:catId});
   try{if(navigator.vibrate)navigator.vibrate(12)}catch(e){}
-  orderSent=false;
+  cartChanged();
   syncUI();
 }
 function changeQty(k,d){
   var ex=inCart(k);if(!ex)return;
   ex.qty+=d;
   if(ex.qty<=0)cart=cart.filter(function(c){return c.key!==k});
+  cartChanged();
   syncUI();
-  if($("sheet").classList.contains("on")&&!orderSent)renderTicket();
+  if($("sheet").classList.contains("on"))renderTicket();
   if($("vsheet").classList.contains("on"))renderVSheet();
 }
 function syncUI(){
@@ -735,7 +807,7 @@ function syncUI(){
   }
 }
 
-/* ---------------- UPSELL (top toast) ---------------- */
+/* ---------------- UPSELL ---------------- */
 function maybeUpsell(catId){
   var u=UPSELL[catId];
   if(!u||upsellShown[catId])return;
@@ -748,11 +820,10 @@ function maybeUpsell(catId){
 }
 function hideTrailer(){$("trailer").classList.remove("show");clearTimeout(trailerTimer)}
 
-/* ---------------- VARIANT SHEET ---------------- */
+/* ---------------- VARIANT ---------------- */
 function openVSheet(catId,idx){
   vsCat=catId;vsIdx=idx;
-  var it=catById(catId).items[idx];
-  $("vs-title").textContent=it.n;
+  $("vs-title").textContent=catById(catId).items[idx].n;
   renderVSheet();
   $("vsheet").classList.add("on");$("overlay").classList.add("on");
 }
@@ -762,9 +833,8 @@ function renderVSheet(){
   it.v.forEach(function(v,vi){
     var k=keyOf(it.n,v.l),ex=inCart(k);
     h+='<div class="vopt"><div class="left"><span class="vl">'+v.l+'</span><span class="vp">₹'+v.p+'</span></div>'
-      +(ex
-        ?'<div class="qtyctl"><button data-act="dec" data-key="'+escA(k)+'">−</button><span class="q">'+ex.qty+'</span><button data-act="inc" data-key="'+escA(k)+'">+</button></div>'
-        :'<button class="addbtn" data-act="vadd" data-cat="'+vsCat+'" data-idx="'+vsIdx+'" data-vi="'+vi+'">ADD</button>')
+      +(ex?'<div class="qtyctl"><button data-act="dec" data-key="'+escA(k)+'">−</button><span class="q">'+ex.qty+'</span><button data-act="inc" data-key="'+escA(k)+'">+</button></div>'
+         :'<button class="addbtn" data-act="vadd" data-cat="'+vsCat+'" data-idx="'+vsIdx+'" data-vi="'+vi+'">ADD</button>')
       +'</div>';
   });
   $("vs-opts").innerHTML=h;
@@ -775,7 +845,7 @@ function closeVSheet(){
   if(vsCat!==null){var c=vsCat;vsCat=null;vsIdx=null;maybeUpsell(c)}
 }
 
-/* ---------------- ORDER SHEET ---------------- */
+/* ---------------- SHEET ---------------- */
 function openCart(){hideTrailer();if(orderSent){renderThanks()}else{renderTicket()}$("sheet").classList.add("on");$("overlay").classList.add("on")}
 function closeCart(){$("sheet").classList.remove("on");if(!$("vsheet").classList.contains("on")&&!$("jumper").classList.contains("on"))$("overlay").classList.remove("on")}
 
@@ -807,10 +877,7 @@ function findSwap(){
 function doSwap(){
   var f=findSwap();if(!f)return;
   var label="";
-  f.parts.forEach(function(p){
-    if(OVERLOADS[p.n])label=p.n;
-    p.qty--;
-  });
+  f.parts.forEach(function(p){if(OVERLOADS[p.n])label=p.n;p.qty--});
   cart=cart.filter(function(c){return c.qty>0});
   addToCart(f.swap.combo.cat,f.swap.combo.n,label,f.swap.combo.p);
   renderTicket();
@@ -818,6 +885,7 @@ function doSwap(){
 
 function renderTicket(){
   var b=$("tk-body");
+  $("tk-sub").textContent="ORDER #"+orderId+" · CHAI INTERVAL · SECTOR 126";
   if(cart.length===0){
     b.innerHTML='<div class="empty"><div class="big">ORDER KHAALI HAI</div>Picture shuru karne ke liye menu se kuch add karo 🎬</div>';
     return;
@@ -832,16 +900,17 @@ function renderTicket(){
   if(rd>0)h+='<div class="tk-discount"><span>🎬 ROLL DEAL — 3rd roll 50% off</span><span>−₹'+rd+'</span></div>';
 
   var f=findSwap();
-  if(f){
-    h+='<div class="nudge swapb"><div><b>'+escA(f.swap.combo.n)+'</b> combo bana lo — same cheezein, seedha <b>₹'+f.save+' bachao</b></div><button data-act="swap">JODI BANAO</button></div>';
-  }
+  if(f)h+='<div class="nudge swapb"><div><b>'+escA(f.swap.combo.n)+'</b> combo bana lo — same cheezein, seedha <b>₹'+f.save+' bachao</b></div><button data-act="swap">JODI BANAO</button></div>';
+
   var hasDrink=false,hasFood=false;
-  cart.forEach(function(c){if(DRINK_CATS[c.cat])hasDrink=true;if(FOOD_CATS[c.cat])hasFood=true;if(c.n.indexOf("Chai")>-1||c.n.indexOf("Coffee")>-1||c.n.indexOf("Mojito")>-1||c.n.indexOf("Lassi")>-1)hasDrink=true});
-  if(!hasDrink){
-    h+='<div class="nudge"><div>Bina drink ke interval? <b>Kulhad Masala Chai sirf ₹29</b> ☕</div><button data-act="quickadd" data-cat="kulhad" data-n="Masala Chai" data-p="29">+ ₹29</button></div>';
-  }else if(!hasFood){
-    h+='<div class="nudge"><div>Saath mein kuch khaane ko? <b>Vada Pav sirf ₹49</b> 🍔</div><button data-act="quickadd" data-cat="snacks" data-n="Vada Pav" data-p="49">+ ₹49</button></div>';
-  }
+  cart.forEach(function(c){
+    if(DRINK_CATS[c.cat])hasDrink=true;
+    if(FOOD_CATS[c.cat])hasFood=true;
+    if(c.n.indexOf("Chai")>-1||c.n.indexOf("Coffee")>-1||c.n.indexOf("Mojito")>-1||c.n.indexOf("Lassi")>-1)hasDrink=true;
+  });
+  if(!hasDrink)h+='<div class="nudge"><div>Bina drink ke interval? <b>Kulhad Masala Chai sirf ₹29</b> ☕</div><button data-act="quickadd" data-cat="kulhad" data-n="Masala Chai" data-p="29">+ ₹29</button></div>';
+  else if(!hasFood)h+='<div class="nudge"><div>Saath mein kuch khaane ko? <b>Vada Pav sirf ₹49</b> 🍔</div><button data-act="quickadd" data-cat="snacks" data-n="Vada Pav" data-p="49">+ ₹49</button></div>';
+
   var avail=ADDONS.filter(function(a){return !byName(a.n)});
   if(avail.length){
     h+='<div class="addons"><h4>🍿 SAATH MEIN KUCH AUR?</h4><div class="addon-strip">';
@@ -850,8 +919,9 @@ function renderTicket(){
     });
     h+='</div></div>';
   }
-  h+='<div class="tk-total"><span>TOTAL<small>Pay at counter — UPI / Cash</small></span><span>₹'+cartTotal()+'</span></div>';
+  h+='<div class="tk-total"><span>TOTAL<small>Order #'+orderId+'</small></span><span>₹'+cartTotal()+'</span></div>';
 
+  /* ---- order details ---- */
   h+='<div class="tk-form">'
     +'<div class="otype">'
     +'<button data-act="otype" data-t="dinein" class="'+(orderType==="dinein"?"sel":"")+'">🪑 DINE-IN</button>'
@@ -860,24 +930,64 @@ function renderTicket(){
     +(orderType==="dinein"?'<input id="f-table" data-field="table" inputmode="numeric" placeholder="Table number *" value="'+escA(order.table)+'">':'')
     +'<input id="f-name" data-field="name" placeholder="Aapka naam '+(orderType==="takeaway"?"*":"(optional)")+'" value="'+escA(order.name)+'">'
     +'<textarea id="f-note" data-field="note" placeholder="Koi khaas baat? (combo flavour, kam sugar, extra masala...)">'+escA(order.note)+'</textarea>'
+    +'</div>';
+
+  /* ---- payment ---- */
+  h+='<div class="paybox">'
+    +'<div class="pay-h">PAYMENT</div>'
+    +'<div class="pay-s">Jaise marzi — dono chalega 🙂</div>'
+    +'<div class="paytabs">'
+    +'<button data-act="paymode" data-m="upi" class="'+(payMode==="upi"?"sel":"")+'">💳 ABHI UPI SE PAY<small>Counter pe line nahi</small></button>'
+    +'<button data-act="paymode" data-m="counter" class="'+(payMode==="counter"?"sel":"")+'">💵 COUNTER PE PAY<small>Cash ya scanner</small></button>'
+    +'</div>';
+
+  if(payMode==="upi"){
+    var qrUri = makeQrDataUri(makeUpiString());
+    h+='<div class="upibox">';
+    if(paidReset)h+='<div class="repay">⚠️ Order change hua — naya total <b>₹'+cartTotal()+'</b>. QR update ho gaya, payment dubara kar do.</div>';
+    h+='<div class="upi-amt">₹'+cartTotal()+'<small>ORDER #'+orderId+'</small></div>';
+    if(qrUri){
+      h+='<div class="qrwrap"><div class="qrhead">CHAI INTERVAL · SCAN &amp; PAY</div>'
+        +'<img class="qrimg" src="'+qrUri+'" alt="UPI QR" width="200" height="200">'
+        +'<div class="qramt">₹'+cartTotal()+' · Order #'+orderId+'</div></div>';
+    }else{
+      h+='<div class="repay">QR load nahi hua — neeche UPI ID / number se pay kar lo 🙏</div>';
+    }
+    h+='<div class="upi-hint qr-how"><b>Kaise pay karein?</b><br>1️⃣ Screenshot lo 📸 → GPay / PhonePe / Paytm kholo → <b>Scan (gallery se)</b> → amount apne aap ₹'+cartTotal()+' aa jayega → UPI PIN.<br>2️⃣ Ya kisi <b>doosre phone</b> se ye QR scan karo.<br>3️⃣ Ya counter pe rakhe scanner se scan karo.</div>'
+      +'<div class="or-line"><span>YA UPI ID / NUMBER SE</span></div>'
+      +'<div class="upi-copy"><div class="lbl"><b>UPI ID</b><span>'+escA(CONFIG.upiIdBackup)+'</span></div><button data-act="copy" data-copy="'+escA(CONFIG.upiIdBackup)+'">COPY</button></div>'
+      +'<div class="upi-copy"><div class="lbl"><b>GPAY / PHONEPE NUMBER</b><span>'+escA(CONFIG.gpayNumber)+'</span></div><button data-act="copy" data-copy="'+escA(CONFIG.gpayNumber)+'">COPY</button></div>'
+      +'<div class="upi-hint">Copy karke apne UPI app mein "Pay to UPI ID / number" mein paste karo — amount daalo <b>₹'+cartTotal()+'</b></div>'
+      +'<label class="paidchk'+(order.paid?" done":"")+'" id="paidchk"><input type="checkbox" id="f-paid" data-field="paid"'+(order.paid?" checked":"")+'><span>✅ Payment ho gaya — order bhej do</span></label>'
+      +'<div class="refwrap"><input id="f-ref" data-field="ref" placeholder="UPI ref / last 4 digits (optional)" value="'+escA(order.ref)+'"></div>'
+      +'</div>';
+  }else{
+    h+='<div class="upibox"><div class="upi-amt">₹'+cartTotal()+'<small>ORDER #'+orderId+'</small></div>'
+      +'<div class="upi-hint">Order bhej do — khaana ready hote hi counter pe <b>cash ya scanner</b> se pay kar dena. Koi advance nahi. 🙂</div></div>';
+  }
+  h+='</div>';
+
+  /* ---- send ---- */
+  h+='<div class="tk-form">'
     +'<div class="formerr" id="formerr"></div>'
     +'<a class="waorder" id="wa-cta" data-act="wa" href="#" target="_blank" rel="noopener">'
     +'<svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M12 2A10 10 0 0 0 2 12a9.9 9.9 0 0 0 1.5 5.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.7 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1a15 15 0 0 1-6.6-5.8c-.5-.8-.9-1.8-.9-2.8 0-.9.5-1.4.7-1.6.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.6.3.1.5.1.7-.1l.8-.9c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .5-.2 1.2Z"/></svg>'
-    +'PLACE ORDER ON WHATSAPP</a>'
+    +(payMode==="upi"?"PAID — SEND ORDER":"SEND ORDER ON WHATSAPP")+'</a>'
     +'</div>'
     +'<div class="tk-foot">Order WhatsApp pe jaata hai — counter turant confirm karega ✅<br>'+escA(CONFIG.address)+'</div>';
 
   b.innerHTML=h;
 }
 
-/* ---------------- POST-ORDER: THANKS + REVIEW + INSTA ---------------- */
+/* ---------------- THANKS ---------------- */
 function renderThanks(){
-  var b=$("tk-body");
-  b.innerHTML=
+  var paidNow = (payMode==="upi" && order.paid);
+  $("tk-body").innerHTML=
     '<div class="thanks">'
     +'<div class="t-stars">★ ★ ★ ★ ★</div>'
     +'<div class="t-big">ORDER GAYA! 🎬</div>'
-    +'<div class="t-sub">WhatsApp pe send ho gaya? Counter 2 minute mein confirm karega.<br>Tab tak seat pe relax — interval enjoy karo.</div>'
+    +'<div class="t-sub">Order <b>#'+orderId+'</b> WhatsApp pe pahunch gaya.<br>Counter 2 minute mein confirm karega — tab tak seat pe relax.</div>'
+    +'<div class="t-paid'+(paidNow?"":" counter")+'">'+(paidNow?"✅ PAID ONLINE · ₹"+cartTotal():"💵 COUNTER PE PAY KARNA HAI · ₹"+cartTotal())+'</div>'
     +'</div>'
     +'<div class="t-divider">INTERVAL MEIN EK CHHOTA SA KAAM</div>'
     +'<div class="t-card">'
@@ -894,15 +1004,24 @@ function renderThanks(){
     +'<a class="t-resend" href="#" data-act="resend">WhatsApp nahi khula? Order dubara bhejo</a>';
 }
 
-/* ---------------- WHATSAPP (no prices in message) ---------------- */
+/* ---------------- WHATSAPP ---------------- */
 function buildWaURL(){
   var msg="🎬 *"+CONFIG.cafeName+" — NAYA ORDER*\n";
+  msg+="🎟️ Order #"+orderId+"\n";
   msg+=orderType==="dinein"?("🪑 Dine-in · Table "+order.table.trim()+"\n"):"🥡 Takeaway\n";
   if(order.name.trim())msg+="👤 "+order.name.trim()+"\n";
   msg+="──────────────\n";
   cart.forEach(function(c,i){msg+=(i+1)+". "+c.n+(c.l?" ("+c.l+")":"")+" × "+c.qty+"\n"});
   if(rollDiscount()>0)msg+="🎟️ Roll Deal — 3rd roll 50% off applied\n";
   msg+="──────────────\n";
+  msg+="💰 *TOTAL: ₹"+cartTotal()+"*\n";
+  if(payMode==="upi"&&order.paid){
+    msg+="✅ *PAID ONLINE (UPI)*";
+    msg+=order.ref.trim()?(" — ref: "+order.ref.trim()+"\n"):"\n";
+    msg+="(Please verify payment received 🙏)\n";
+  }else{
+    msg+="💵 *COUNTER PE PAY KARUNGA*\n";
+  }
   if(order.note.trim())msg+="📝 "+order.note.trim()+"\n";
   msg+="✅ Please confirm my order";
   return "https://wa.me/"+CONFIG.whatsappNumber+"?text="+encodeURIComponent(msg);
@@ -911,10 +1030,27 @@ function validateOrder(){
   if(cart.length===0)return "Order khaali hai — pehle kuch add karo 🎬";
   if(orderType==="dinein"&&!order.table.trim())return "Table number daal do — order wahin pahunchega 🪑";
   if(orderType==="takeaway"&&!order.name.trim())return "Naam daal do — parcel pe likhna hai ✍️";
+  if(payMode==="upi"&&!order.paid)return "Payment karke '✅ Payment ho gaya' tick kar do — ya 'Counter pe pay' chun lo 🙂";
   return null;
 }
-function showErr(m){var e=$("formerr");if(e){e.textContent=m;e.classList.add("on")}}
+function showErr(m){var e=$("formerr");if(e){e.textContent=m;e.classList.add("on");e.scrollIntoView({behavior:"smooth",block:"center"})}}
 function clearErr(){var e=$("formerr");if(e)e.classList.remove("on")}
+
+/* ---------------- COPY ---------------- */
+function copyText(txt,btn){
+  function done(){var o=btn.textContent;btn.textContent="COPIED ✓";setTimeout(function(){btn.textContent=o},1600)}
+  function fallback(){
+    var ta=document.createElement("textarea");
+    ta.value=txt;ta.setAttribute("readonly","");
+    ta.style.position="fixed";ta.style.top="-1000px";ta.style.opacity="0";
+    document.body.appendChild(ta);ta.select();ta.setSelectionRange(0,99999);
+    try{document.execCommand("copy");done()}catch(e){}
+    document.body.removeChild(ta);
+  }
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(done).catch(fallback);
+  }else fallback();
+}
 
 /* ---------------- JUMP / TABS / SEARCH ---------------- */
 function openJump(){buildJump();$("jumper").classList.add("on");$("overlay").classList.add("on")}
@@ -923,7 +1059,7 @@ function jumpTo(secId){
   closeJump();
   var el=$(secId);if(!el)return;
   var page=el.closest(".tabpage");
-  if(page&&!page.classList.contains("on")){switchTab(page.id==="page-food"?"food":"drinks")}
+  if(page&&!page.classList.contains("on"))switchTab(page.id==="page-food"?"food":"drinks");
   setTimeout(function(){el.scrollIntoView({behavior:"smooth",block:"start"})},60);
 }
 function switchTab(t){
@@ -936,21 +1072,15 @@ function switchTab(t){
 }
 function countMatches(tab,q){
   var n=0;
-  document.querySelectorAll("#page-"+tab+" .item").forEach(function(it){
-    if(it.dataset.name.indexOf(q)>-1)n++;
-  });
+  document.querySelectorAll("#page-"+tab+" .item").forEach(function(it){if(it.dataset.name.indexOf(q)>-1)n++});
   return n;
 }
 function applySearch(q){
   q=(q||"").trim().toLowerCase();
   $("sclear").classList.toggle("hide",!q);
-  /* smart tab switch: if nothing here but other tab has it, hop over */
   if(q&&!searching){
-    var here=countMatches(activeTab,q);
     var other=activeTab==="food"?"drinks":"food";
-    if(here===0&&countMatches(other,q)>0){
-      searching=true;switchTab(other);searching=false;return;
-    }
+    if(countMatches(activeTab,q)===0&&countMatches(other,q)>0){searching=true;switchTab(other);searching=false;return}
   }
   var any=false;
   document.querySelectorAll("#page-"+activeTab+" .section").forEach(function(sec){
@@ -965,7 +1095,6 @@ function applySearch(q){
   $("noresult").classList.toggle("hide",any||!q);
 }
 
-/* ---------------- CHIP HIGHLIGHT ON SCROLL ---------------- */
 var io=new IntersectionObserver(function(es){
   es.forEach(function(e){
     if(!e.isIntersecting)return;
@@ -977,7 +1106,7 @@ var io=new IntersectionObserver(function(es){
   });
 },{rootMargin:"-30% 0px -60% 0px"});
 
-/* ---------------- EVENT DELEGATION ---------------- */
+/* ---------------- EVENTS ---------------- */
 document.addEventListener("click",function(e){
   var t=e.target.closest("[data-act]");
   if(!t)return;
@@ -997,26 +1126,34 @@ document.addEventListener("click",function(e){
   else if(act==="inc"){changeQty(t.dataset.key,1)}
   else if(act==="dec"){changeQty(t.dataset.key,-1)}
   else if(act==="quickadd"){addToCart(t.dataset.cat,t.dataset.n,"",+t.dataset.p);renderTicket()}
-  else if(act==="tr-add"){if(pendingUpsell){addToCart(pendingUpsell.cat,pendingUpsell.n,"",pendingUpsell.p)}hideTrailer()}
+  else if(act==="tr-add"){if(pendingUpsell)addToCart(pendingUpsell.cat,pendingUpsell.n,"",pendingUpsell.p);hideTrailer()}
   else if(act==="tr-close"){hideTrailer()}
   else if(act==="open-cart"){openCart()}
   else if(act==="close-cart"){closeCart()}
   else if(act==="overlay"){closeCart();closeVSheet();closeJump()}
   else if(act==="otype"){orderType=t.dataset.t;renderTicket()}
+  else if(act==="paymode"){payMode=t.dataset.m;paidReset=false;renderTicket()}
+  else if(act==="copy"){e.preventDefault();copyText(t.dataset.copy,t)}
   else if(act==="swap"){doSwap()}
   else if(act==="jump"){jumpTo(t.dataset.sec)}
   else if(act==="jump-open"){$("jumper").classList.contains("on")?closeJump():openJump()}
   else if(act==="tab"){switchTab(t.dataset.tab);window.scrollTo({top:0,behavior:"smooth"})}
   else if(act==="sclear"){$("search").value="";applySearch("")}
-  else if(act==="new-order"){cart=[];orderSent=false;order.note="";syncUI();closeCart()}
+  else if(act==="new-order"){
+    cart=[];orderSent=false;order.note="";order.paid=false;order.ref="";
+    payMode="upi";upiOpened=false;paidReset=false;upsellShown={};
+    orderId=makeOrderId();
+    syncUI();closeCart();
+  }
   else if(act==="resend"){
     e.preventDefault();
     var u=buildWaURL();
-    var w=window.open(u,"_blank");if(!w)location.href=u;
+    var w=window.open(u,"_blank");
+    if(!w)window.location.href=u;
   }
   else if(act==="wa"){
     var err=validateOrder();
-    if(err){e.preventDefault();showErr(err);var ff=$("f-table")||$("f-name");if(ff)ff.focus();return}
+    if(err){e.preventDefault();showErr(err);return}
     clearErr();
     t.href=buildWaURL();
     orderSent=true;
@@ -1024,16 +1161,37 @@ document.addEventListener("click",function(e){
   }
 });
 
-/* keep form state through re-renders */
-document.addEventListener("input",function(e){
+function onField(e){
   var f=e.target.dataset&&e.target.dataset.field;
-  if(f){order[f]=e.target.value;clearErr()}
+  if(!f)return;
+  if(e.target.type==="checkbox"){
+    order[f]=e.target.checked;
+    paidReset=false;
+    var box=$("paidchk");
+    if(box)box.classList.toggle("done",e.target.checked);
+  }else{
+    order[f]=e.target.value;
+  }
+  clearErr();
+}
+document.addEventListener("input",function(e){
+  onField(e);
   if(e.target.id==="search")applySearch(e.target.value);
 });
+document.addEventListener("change",onField);
 
-/* when they come back from WhatsApp, show the thank-you view */
+/* wapas aane pe: agar UPI app khola tha par tick nahi kiya — yaad dila do */
 document.addEventListener("visibilitychange",function(){
-  if(!document.hidden&&orderSent&&$("sheet").classList.contains("on"))renderThanks();
+  if(document.hidden)return;
+  if(orderSent&&$("sheet").classList.contains("on")){renderThanks();return}
+  if(upiOpened&&payMode==="upi"&&!order.paid&&$("sheet").classList.contains("on")){
+    var box=$("paidchk");
+    if(box){
+      box.classList.add("pulse");
+      box.scrollIntoView({behavior:"smooth",block:"center"});
+      setTimeout(function(){box.classList.remove("pulse")},3600);
+    }
+  }
 });
 
 /* ---------------- INIT ---------------- */
